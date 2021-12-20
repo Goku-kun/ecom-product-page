@@ -1,3 +1,7 @@
+// For now, all CSS is in this file. We can modularize it by breaking it up into partials as needed
+// 'npm run sass' will compile the scss to the css file and watch for changes while running
+// Live Sass Compiler plugin for VSC highly reccommended
+
 .App {
   text-align: center;
 }
@@ -12,6 +16,7 @@
     animation: App-logo-spin infinite 20s linear;
   }
 }
+
 .App-header {
   background-color: #282c34;
   min-height: 100vh;
@@ -35,5 +40,3 @@
     transform: rotate(360deg);
   }
 }
-
-/*# sourceMappingURL=App.css.map */

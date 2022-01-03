@@ -24,10 +24,11 @@ var options = {
   ],
   reducers: {
     addProduct(state, action) {
-      return state.push({
+      state.push({
         id: uniqueId++,
         ...action.payload,
       });
+      return state;
     },
     removeProduct(state, action) {
       return state.filter((product) => product.id !== action.payload.id);

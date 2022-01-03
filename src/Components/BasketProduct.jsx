@@ -21,7 +21,10 @@ function BasketProduct(props) {
             </strong>
           </p>
         </div>
-        <button onClick={() => dispatch(removeProduct({ id: props.id }))}>
+        <button
+          className="remove-product"
+          onClick={() => dispatch(removeProduct({ id: props.id }))}
+        >
           <img src="images/icon-delete.svg" alt="remove product" />
         </button>
       </div>

@@ -34,17 +34,17 @@ nav {
 
   div.cart-profile {
     display: flex;
-    margin-top: -0.6rem;
+    margin-top: -0.7rem;
 
     .cart-button {
       background-color: transparent;
       border: 0px;
-      margin-top: 6px;
       margin-right: 4.3rem;
 
       img.cart-logo {
         width: $cart-logo;
         height: $cart-logo;
+        margin-top: -0.4rem;
       }
     }
 

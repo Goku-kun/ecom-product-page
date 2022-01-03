@@ -25,12 +25,13 @@ function Navbar() {
         <a href="#">Contact</a>
       </div>
       <div className="cart-profile">
-        <img
-          alt="cart logo"
-          className="cart-logo"
-          src={"images/icon-cart.svg"}
-          onClick={toggleCart}
-        />
+        <button onClick={toggleCart} className="cart-button">
+          <img
+            alt="cart logo"
+            className="cart-logo"
+            src={"images/icon-cart.svg"}
+          />
+        </button>
         <img
           alt="profile avatar"
           className="avatar"

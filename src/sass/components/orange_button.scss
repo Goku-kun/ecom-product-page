@@ -1,5 +1,41 @@
-@use '../helpers/variables';
+@import "../helpers/variables";
+
+$btnColor: $primary-orange;
 
 .main-button {
-  color: $primary-orange;
+  background-color: $btnColor;
+  color: $white;
+
+  min-height: 44px;
+  min-width: 10ch;
+
+  padding: 0.25em 0.75em;
+  border: none;
+  border-radius: 8px;
+  box-sizing: border-box;
+  cursor: pointer;
+
+  font-family: inherit;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.1;
+
+  transition: 220ms all ease-in-out;
+
+  // enables an icon to be added before text
+  display: inline-flex;
+  align-items: center;
+  justify-content: center;
+
+  &:hover,
+  &:active {
+    background-color: scale-color($btnColor, $lightness: -20%);
+  }
+
+  // for accessibility
+  &:focus {
+    outline-style: solid;
+    outline-color: transparent;
+    box-shadow: 0 0 0 4px scale-color($btnColor, $lightness: -40%);
+  }
 }

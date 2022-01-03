@@ -36,11 +36,16 @@ nav {
     display: flex;
     margin-top: -0.6rem;
 
-    img.cart-logo {
+    .cart-button {
+      background-color: transparent;
+      border: 0px;
       margin-top: 6px;
       margin-right: 4.3rem;
-      width: $cart-logo;
-      height: $cart-logo;
+
+      img.cart-logo {
+        width: $cart-logo;
+        height: $cart-logo;
+      }
     }
 
     img.avatar {
@@ -54,13 +59,12 @@ nav {
     img.avatar:hover {
       border: 2px solid $primary-orange;
       cursor: pointer;
-
     }
 
     .basket-content {
       width: 22.5rem;
       position: absolute;
-      left: 81%;
+      left: 80%;
       top: 10%;
 
       transform: translateX(-50%) scaleY(0);
@@ -73,16 +77,29 @@ nav {
       box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
       padding-bottom: 2.7rem;
       transition: all 0.2s ease-in-out;
+
+
+      .basket-checkout-button {
+        background-color: $primary-orange;
+        border: 0px;
+        border-radius: 0.6rem;
+        padding:1rem;
+        margin-left: 1.1rem;
+        margin-top: 2rem;
+        color: $primary-pale-orange;
+        font-weight: bold;
+      }
     }
 
     .basket-content-visible {
       transform: translateX(-50%) scaleY(1);
       -webkit-transform: translateX(-50%) scaleY(1);
+      padding-bottom: 2rem;
     }
 
     .basket-heading {
       color: $very-vark-blue;
-      padding: 1.2rem 0.8rem;
+      padding: 1.2rem 1.5rem;
       margin: 0;
       border-bottom: 1px solid $grayish-blue;
       font-weight: 700;
@@ -91,7 +108,7 @@ nav {
     .basket-empty {
       color: $dark-grayish-blue;
       text-align: center;
-      padding: 5rem 0rem;
+      padding: 4rem 0rem;
       font-weight: 700;
     }
 
@@ -124,12 +141,22 @@ nav {
           }
         }
       }
-      button {
+      .remove-product {
+        background-color: transparent;
+        border: 0px;
+
         img {
-          width: 15px;
+          width: 17px;
           height: auto;
-          background-color: transparent;
-          border: 0px;
+        }
+      }
+
+      .remove-product:active {
+
+        img {
+          width: 13px;
+          height: auto;
+          padding: 0 2px;
         }
       }
     }

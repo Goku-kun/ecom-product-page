@@ -1,5 +1,4 @@
 @use 'sass/helpers/normalize';
-@use 'sass/helpers//variables';
 
 @font-face {
   font-family: 'Kumbh Sans';
@@ -29,6 +28,5 @@ body {
 
 .App {
   h1 {
-    color:red;
   }
 }

@@ -39,7 +39,7 @@ nav {
 
   div.cart-profile {
     display: flex;
-    margin-top: -0.6rem;
+    margin-top: -0.7rem;
 
     .cart-button {
       background-color: transparent;
@@ -50,6 +50,7 @@ nav {
       img.cart-logo {
         width: $cart-logo;
         height: $cart-logo;
+        margin-top: -0.4rem;
       }
     }
 

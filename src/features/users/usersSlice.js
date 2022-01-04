@@ -13,10 +13,11 @@ var options = {
   ],
   reducers: {
     addUser(state, action) {
-      return state.push({
+      state.push({
         id: uniqueId++,
         ...action.payload,
       });
+      return state;
     },
     removeUser(state, action) {
       return state.filter((user) => user.id !== action.payload.id);

@@ -17,7 +17,8 @@ var options = {
         (basketProduct) => basketProduct.id === action.payload.id
       );
       if (product === undefined) {
-        return state.push({ quantity: 1, ...action.payload });
+        state.push({ quantity: 1, ...action.payload });
+        return state;
       } else {
         product.quantity += 1;
         return state;

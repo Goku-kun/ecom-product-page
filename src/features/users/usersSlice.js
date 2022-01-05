@@ -1,8 +1,8 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-var uniqueId = 0;
+let uniqueId = 0;
 
-var options = {
+const options = {
   name: "users",
   initialState: [
     {
@@ -25,7 +25,7 @@ var options = {
   },
 };
 
-var userSlice = createSlice(options);
+const userSlice = createSlice(options);
 
 export function selectUsers(state) {
   return state.users;

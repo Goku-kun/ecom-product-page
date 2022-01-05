@@ -1,6 +1,6 @@
 import { createSlice } from "@reduxjs/toolkit";
 
-var options = {
+const options = {
   name: "basket",
   initialState: [
     {
@@ -13,7 +13,7 @@ var options = {
   ],
   reducers: {
     addProduct(state, action) {
-      var product = state.find(
+      let product = state.find(
         (basketProduct) => basketProduct.id === action.payload.id
       );
       if (product === undefined) {
@@ -25,7 +25,7 @@ var options = {
       }
     },
     removeOneProduct(state, action) {
-      var product = state.find(
+      let product = state.find(
         (basketProduct) => basketProduct.id === action.payload.id
       );
       if (product.quantity > 1) {
@@ -51,7 +51,7 @@ export function selectBasket(state) {
 
 const basketSlice = createSlice(options);
 
-export var { addProduct, removeOneProduct, removeProduct } =
+export const { addProduct, removeOneProduct, removeProduct } =
   basketSlice.actions;
 
 export default basketSlice.reducer;

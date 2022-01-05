@@ -12,23 +12,28 @@ nav {
     width: auto;
   }
 
-  div.main-nav {
-    margin-left: -35%;
-    display: flex;
-    gap: 2.3rem;
-    justify-self: flex-start;
+  button.overlay-close-btn {
+    display: none;
+  }
 
-    a {
-      text-decoration: none;
-      color: rgba($color: #000, $alpha: 0.6);
-      padding-top: 0.1rem;
-      padding-bottom: 1.68rem;
-      font-size: 0.8rem;
-    }
-    a:hover {
-      padding-bottom: 1.4rem;
-      border-bottom: 4px solid $primary-orange;
-      color: $black;
+  div.main-nav {
+    div.overlay-content {
+      margin-left: 5%;
+      display: flex;
+      gap: 2.3rem;
+      justify-self: flex-start;
+      a {
+        text-decoration: none;
+        color: rgba($color: #000, $alpha: 0.6);
+        padding-top: 0.1rem;
+        padding-bottom: 2.2rem;
+        font-size: 0.8rem;
+      }
+      a:hover {
+        padding-bottom: 1.4rem;
+        border-bottom: 4px solid $primary-orange;
+        color: $black;
+      }
     }
   }
 
@@ -40,6 +45,7 @@ nav {
       background-color: transparent;
       border: 0px;
       margin-right: 4.3rem;
+      margin-top: -1rem;
 
       img.cart-logo {
         width: $cart-logo;
@@ -65,7 +71,7 @@ nav {
       width: 22.5rem;
       position: absolute;
       left: 80%;
-      top: 10%;
+      top: 11%;
 
       transform: translateX(-50%) scaleY(0);
       -webkit-transform: translateX(-50%) scaleY(0);
@@ -78,12 +84,11 @@ nav {
       padding-bottom: 2.7rem;
       transition: all 0.2s ease-in-out;
 
-
       .basket-checkout-button {
         background-color: $primary-orange;
         border: 0px;
         border-radius: 0.6rem;
-        padding:1rem;
+        padding: 1rem;
         margin-left: 1.1rem;
         margin-top: 2rem;
         color: $primary-pale-orange;
@@ -152,11 +157,54 @@ nav {
       }
 
       .remove-product:active {
-
         img {
           width: 13px;
           height: auto;
           padding: 0 2px;
+        }
+      }
+    }
+  }
+}
+
+@media screen and (max-width: 430px) {
+  nav {
+    margin: 0% 0%;
+    button.overlay-close-btn {
+      display: block;
+      position: absolute;
+      background-color: transparent;
+      border: 0px;
+      font-size: 3rem;
+      top: 10px;
+      left: 20px;
+      z-index: 12;
+    }
+
+    div.main-nav {
+      position: fixed;
+      z-index: 11;
+      height: 100%;
+      width: 0;
+      overflow-x: hidden;
+      transition: 0.5s;
+      background-color: rgba(255, 255, 255, 1);
+
+      div.overlay-content {
+        display: flex;
+        flex-direction: column;
+        gap: 1rem;
+        position: relative;
+        top: 7%;
+        width: 100%;
+        align-items: flex-start;
+        margin-left: 5%;
+
+        a {
+          color: black;
+          padding-bottom: 0;
+          font-weight: bold;
+          // border: 12px solid red;
         }
       }
     }

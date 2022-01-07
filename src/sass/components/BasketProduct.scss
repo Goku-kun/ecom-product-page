@@ -1,0 +1,51 @@
+@import "../helpers/variables";
+
+@media screen and (min-width: 1440px) {
+  .basket-product {
+    margin-left: 1.5rem;
+    margin-top: 1.5rem;
+    margin-right: 0.5rem;
+    display: flex;
+    justify-content: space-between;
+
+    img {
+      width: $basket-product-thumbnail;
+      height: $basket-product-thumbnail;
+      border-radius: 0.25rem;
+    }
+    .basket-product-information {
+      display: flex;
+      flex-direction: column;
+      gap: 0.25rem;
+      p {
+        margin-block: 0;
+        display: inline;
+        color: $grayish-blue;
+        margin-left: 0.7rem;
+        // margin-top: -4rem;
+        font-size: 1rem;
+
+        strong {
+          color: $black;
+        }
+      }
+    }
+    .remove-product {
+      background-color: transparent;
+      border: 0px;
+
+      img {
+        width: 17px;
+        height: auto;
+      }
+    }
+
+    .remove-product:active {
+      img {
+        width: 13px;
+        height: auto;
+        padding: 0 2px;
+      }
+    }
+  }
+}

@@ -7,7 +7,7 @@ function App() {
   return (
     <div className="App">
       <Navbar />
-      <Price listPrice={250} percentOff={50}/>
+      <Price listPrice={250} percentOff={50} />
     </div>
   );
 }

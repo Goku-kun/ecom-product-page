@@ -1,0 +1,66 @@
+@import "../helpers/variables";
+
+.strike {
+  position: absolute;
+  left: 0;
+  width: 100%;
+  height: 1px;
+  background: $grayish-blue;
+
+  /* position of strike through from top */
+  top: 60%;
+}
+
+#price-container {
+  display: flex;
+  flex-direction: row;
+  width: 100%;
+  height: 40px;
+  justify-content: space-between;
+  align-items: center;
+  margin: 10px;
+
+  @media (min-width: 430px) {
+    flex-direction: column;
+    align-items: flex-start;
+  }
+}
+
+#current-percent-container {
+  display: flex;
+  flex-direction: row;
+}
+
+#current-price {
+  font-weight: bold;
+  font-size: 1.5rem;
+  margin-bottom: 0;
+  margin-top: 0;
+}
+
+#percent-off {
+  color: $primary-orange;
+  background-color: $primary-pale-orange;
+  padding: 5px;
+  border-radius: 8px;
+  font-size: 1rem;
+  font-weight: bold;
+  margin-bottom: 0;
+  margin-top: 0;
+  margin-left: 10px;
+  box-sizing: border-box;
+}
+
+#list-price {
+  color: $grayish-blue;
+  position: relative;
+  font-size: 0.8rem;
+  font-weight: bold;
+  margin-bottom: 5px;
+  align-self: baseline;
+
+  @media (min-width: 430px) {
+    margin-bottom: 0;
+    margin-top: 3px;
+  }
+}

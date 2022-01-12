@@ -1,5 +1,6 @@
 import React, { useState } from "react";
-import "./../sass/components/quantity_selector.scss";
+import "./../sass/components/QuantitySelector.scss";
+import SecondaryButton from "./SecondaryButton";
 
 export default function QuantitySelector() {
   const [quantity, setQuantity] = useState(0);
@@ -14,13 +15,13 @@ export default function QuantitySelector() {
 
   return (
     <div className="quantity-selector">
-      <button type="button" disabled={minQuantity} onClick={reduce}>
+      <SecondaryButton onClick={reduce} quantity={minQuantity}>
         -
-      </button>
+      </SecondaryButton>
       <div>{quantity}</div>
-      <button type="button" disabled={maxQuantity} onClick={increment}>
+      <SecondaryButton onClick={increment} quantity={maxQuantity}>
         +
-      </button>
+      </SecondaryButton>
     </div>
   );
 }

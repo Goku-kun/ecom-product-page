@@ -4,12 +4,14 @@ import { useSelector } from "react-redux";
 import { selectBasket } from "../features/basket/basketSlice";
 import BasketProduct from "./BasketProduct";
 import CheckoutButton from "../Components/CheckoutButton";
+import "./../sass/components/Basket.scss";
 
 function Basket({ isVisible }) {
   const basketProducts = useSelector(selectBasket);
 
   function handleCheckout() {
-    // do nothing
+    // We're not handling checkout implementation since there is no checkout page
+    // Therefore, do nothing.
   }
 
   return (
@@ -30,7 +32,7 @@ function Basket({ isVisible }) {
                 quantity={product.quantity}
                 id={product.id}
                 key={new Date().getTime()}
-              ></BasketProduct>
+              />
             );
           })}
           <CheckoutButton

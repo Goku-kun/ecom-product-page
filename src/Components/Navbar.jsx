@@ -17,10 +17,6 @@ function Navbar() {
   const isOverlayVisible = useSelector(selectOverlayState);
   const isCartVisible = useSelector(selectCartVisibilityState);
 
-  function closeOverlay() {
-    setOverlayVisible(false);
-  }
-
   return (
     <nav>
       <div

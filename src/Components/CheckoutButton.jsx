@@ -1,5 +1,6 @@
 import React from "react";
 import PropTypes from "prop-types";
+import "../sass/components/CheckoutButton.scss";
 
 export default function CheckoutButton(props) {
   // can add a custom class in addition to main-button.

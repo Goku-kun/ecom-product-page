@@ -2,7 +2,7 @@ import PropTypes from "prop-types";
 import React from "react";
 import { useDispatch } from "react-redux";
 import { removeProduct } from "../features/basket/basketSlice";
-// import IconDelete from
+import "../sass/components/BasketProduct.scss";
 
 function BasketProduct(props) {
   const dispatch = useDispatch();

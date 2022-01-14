@@ -15,10 +15,6 @@
   background-position: center;
   aspect-ratio: 1.15;
 
-  @media (min-width: 430px) {
-    // width: 400px;
-  }
-
   .white-circle {
     margin: 10px;
     height: 40px;
@@ -38,6 +34,8 @@
     user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 
+    cursor: pointer;
+
     @media (min-width: 430px) {
       margin: -20px;
     }
@@ -55,7 +53,6 @@
   }
   #slider {
     aspect-ratio: 1;
-    // width: 25rem;
     width: 400px;
     border-radius: 1rem;
 

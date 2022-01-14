@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
 import "../sass/components/Slider.scss";
-import SmallSliderImages from "./SliderThumbnail";
+import SliderThumbail from "./SliderThumbnail";
 import LightBox from "./LightBox";
 
 export default function Slider(props) {
@@ -72,9 +72,10 @@ export default function Slider(props) {
         </div>
       </div>
       <div className="slider-photos">
-        <SmallSliderImages
+        <SliderThumbail
           onClickThumbnail={onClickThumbnail}
           images={props.imagesArray}
+          currentThumbnailActive={currentImageIndex}
         />
       </div>
     </div>

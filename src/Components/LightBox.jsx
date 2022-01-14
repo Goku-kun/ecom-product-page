@@ -1,7 +1,7 @@
 import React, { useState } from "react";
 import PropTypes from "prop-types";
-import SmallSliderImages from "./SliderThumbnail";
 import "./../sass/components/LightBox.scss";
+import SliderThumbnail from "./SliderThumbnail";
 
 function LightBox({ images, setLightBoxState, lightBoxState }) {
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
@@ -66,9 +66,10 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
             </div>
           </div>
           <div className="slider-photos">
-            <SmallSliderImages
+            <SliderThumbnail
               onClickThumbnail={onClickThumbnail}
               images={images}
+              currentThumbnailActive={currentImageIndex}
             />
           </div>
         </div>

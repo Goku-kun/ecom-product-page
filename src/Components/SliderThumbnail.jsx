@@ -1,9 +1,19 @@
-import React, { useState } from "react";
+import React, { useState, useEffect } from "react";
 import PropTypes from "prop-types";
 import "./../sass/components/SliderThumbnail.scss";
 
-function SmallSliderImages({ images, onClickThumbnail }) {
-  const [focus, setFocus] = useState(Array(images.length).fill(false));
+function SliderThumbnail({ images, onClickThumbnail, currentThumbnailActive }) {
+  let focusArray = Array(images.length).fill(false);
+  focusArray[currentThumbnailActive] = true;
+  const [focus, setFocus] = useState(focusArray);
+
+  useEffect(() => {
+    let focusArray = Array(images.length).fill(false);
+    focusArray[currentThumbnailActive] = true;
+    setFocus(focusArray);
+
+    return () => {};
+  }, [currentThumbnailActive]);
   return (
     <div className="small-images-container">
       {images.map((image, index) => {
@@ -25,10 +35,10 @@ function SmallSliderImages({ images, onClickThumbnail }) {
   );
 }
 
-SmallSliderImages.propTypes = {
+SliderThumbnail.propTypes = {
   images: PropTypes.array.isRequired,
   onClickThumbnail: PropTypes.func.isRequired,
-  // width: PropTypes.string.isRequired,
+  currentThumbnailActive: PropTypes.number,
 };
 
-export default SmallSliderImages;
+export default SliderThumbnail;

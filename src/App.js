@@ -1,6 +1,6 @@
 import React from "react";
 import "./App.scss";
-// import Navbar from "./Components/Navbar";
+import Navbar from "./Components/Navbar";
 // import Price from "./Components/Price";
 import Slider from "./Components/Slider";
 import { useSelector } from "react-redux";
@@ -13,6 +13,7 @@ function App() {
 
   return (
     <div className="App">
+      <Navbar />
       <Slider imagesArray={imagesArray} />
     </div>
   );

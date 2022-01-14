@@ -6,7 +6,7 @@ import Basket from "./Basket";
 
 function Navbar() {
   const [cartVisible, setcartVisible] = useState(false);
-  const [overlayVisible, setOverlayVisible] = useState(true);
+  const [overlayVisible, setOverlayVisible] = useState(false);
   const defaultUser = useSelector(selectDefaultUser);
 
   function toggleCart() {

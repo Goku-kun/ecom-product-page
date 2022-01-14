@@ -1,7 +1,8 @@
 import React, { useState } from "react";
-import { PropTypes } from "prop-types";
+import PropTypes from "prop-types";
 import "../sass/components/Slider.scss";
 import SmallSliderImages from "./SliderThumbnail";
+import LightBox from "./LightBox";
 
 export default function Slider(props) {
   // The array of images will either come from props or redux
@@ -9,6 +10,7 @@ export default function Slider(props) {
   // questions than answers at this point
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
+  const [lightBoxState, setLightBoxState] = useState(false);
 
   const handlePreviousImage = () => {
     let length = props.imagesArray.length;
@@ -37,16 +39,31 @@ export default function Slider(props) {
   };
 
   return (
-    <>
-      <div id="slider" style={url}>
-        <div className="white-circle" onClick={handlePreviousImage}>
+    <div className="slider-container">
+      <LightBox
+        images={props.imagesArray}
+        setLightBoxState={setLightBoxState}
+        lightBoxState={lightBoxState}
+      />
+      <div id="slider" style={url} onClick={() => setLightBoxState(true)}>
+        <div
+          className={`white-circle ${
+            props.type === "lightbox" ? "lightbox-show-button" : ""
+          }`}
+          onClick={handlePreviousImage}
+        >
           <img
             id="left-arrow"
             className="arrow-icon"
             src="./images/icon-previous.svg"
           />
         </div>
-        <div className="white-circle" onClick={handleNextImage}>
+        <div
+          className={`white-circle ${
+            props.type === "lightbox" ? "lightbox-show-button" : ""
+          }`}
+          onClick={handleNextImage}
+        >
           <img
             id="right-arrow"
             className="arrow-icon"
@@ -60,10 +77,11 @@ export default function Slider(props) {
           images={props.imagesArray}
         />
       </div>
-    </>
+    </div>
   );
 }
 
 Slider.propTypes = {
   imagesArray: PropTypes.array.isRequired,
+  type: PropTypes.string,
 };

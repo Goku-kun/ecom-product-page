@@ -28,6 +28,7 @@ function SmallSliderImages({ images, onClickThumbnail }) {
 SmallSliderImages.propTypes = {
   images: PropTypes.array.isRequired,
   onClickThumbnail: PropTypes.func.isRequired,
+  // width: PropTypes.string.isRequired,
 };
 
 export default SmallSliderImages;

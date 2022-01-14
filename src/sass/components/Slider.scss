@@ -1,5 +1,9 @@
 @import "../helpers/variables";
 
+.slider-container {
+  width: 100vw;
+}
+
 #slider {
   display: flex;
   justify-content: space-between;
@@ -9,10 +13,10 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  aspect-ratio: 1.3;
+  aspect-ratio: 1.15;
 
   @media (min-width: 430px) {
-    width: 400px;
+    // width: 400px;
   }
 
   .white-circle {
@@ -46,13 +50,20 @@
 }
 
 @media screen and (min-width: 1440px) {
+  .slider-container {
+    width: 400px;
+  }
   #slider {
     aspect-ratio: 1;
-    width: 25rem;
+    // width: 25rem;
+    width: 400px;
     border-radius: 1rem;
 
     .white-circle {
       display: none;
+    }
+    .lightbox-show-button {
+      display: flex;
     }
   }
 }

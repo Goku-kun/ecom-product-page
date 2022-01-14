@@ -9,7 +9,7 @@ $btnColor: $primary-orange;
   min-height: 44px;
   min-width: 10ch;
 
-  padding: 0.25em 0.75em;
+  padding: 1.2rem 0.75em;
   border: none;
   border-radius: 8px;
   box-sizing: border-box;
@@ -37,5 +37,11 @@ $btnColor: $primary-orange;
     outline-style: solid;
     outline-color: transparent;
     box-shadow: 0 0 0 4px scale-color($btnColor, $lightness: -40%);
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .main-button {
+    padding: 1rem 0.75em;
   }
 }

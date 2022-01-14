@@ -9,7 +9,7 @@
   background-size: 100%;
   background-repeat: no-repeat;
   background-position: center;
-  aspect-ratio: 1;
+  aspect-ratio: 1.3;
 
   @media (min-width: 430px) {
     width: 400px;
@@ -25,6 +25,15 @@
     align-items: center;
     background-color: white;
 
+    // to not allow selecting arrows
+    -webkit-touch-callout: none; /* iOS Safari */
+    -webkit-user-select: none; /* Safari */
+    -khtml-user-select: none; /* Konqueror HTML */
+    -moz-user-select: none; /* Old versions of Firefox */
+    -ms-user-select: none; /* Internet Explorer/Edge */
+    user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
     @media (min-width: 430px) {
       margin: -20px;
     }
@@ -33,5 +42,17 @@
     height: 13px;
     width: 10px;
     pointer-events: none;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  #slider {
+    aspect-ratio: 1;
+    width: 25rem;
+    border-radius: 1rem;
+
+    .white-circle {
+      display: none;
+    }
   }
 }

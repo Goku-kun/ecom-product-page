@@ -1,0 +1,39 @@
+.main-button {
+  background-color: #ff7d1a;
+  color: white;
+  min-height: 44px;
+  min-width: 10ch;
+  padding: 0.25em 0.75em;
+  border: none;
+  border-radius: 8px;
+  -webkit-box-sizing: border-box;
+          box-sizing: border-box;
+  cursor: pointer;
+  font-family: inherit;
+  text-align: center;
+  font-weight: bold;
+  line-height: 1.1;
+  -webkit-transition: 220ms all ease-in-out;
+  transition: 220ms all ease-in-out;
+  display: -webkit-inline-box;
+  display: -ms-inline-flexbox;
+  display: inline-flex;
+  -webkit-box-align: center;
+      -ms-flex-align: center;
+          align-items: center;
+  -webkit-box-pack: center;
+      -ms-flex-pack: center;
+          justify-content: center;
+}
+
+.main-button:hover, .main-button:active {
+  background-color: #e06100;
+}
+
+.main-button:focus {
+  outline-style: solid;
+  outline-color: transparent;
+  -webkit-box-shadow: 0 0 0 4px #a84900;
+          box-shadow: 0 0 0 4px #a84900;
+}
+/*# sourceMappingURL=orange_button.css.map */

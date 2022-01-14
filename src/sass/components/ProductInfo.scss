@@ -1,0 +1,24 @@
+@import "../helpers/variables";
+
+#product-info-container {
+  // width: 100%;
+  // margin: 20px;
+}
+
+#company-name {
+  color: $primary-orange;
+  font-weight: bold;
+  margin-bottom: 10px;
+  font-size: 14px;
+}
+
+#product-name {
+  margin-top: 0;
+  font-size: 2.5rem;
+  margin-bottom: 0;
+}
+
+#product-description {
+  color: $dark-grayish-blue;
+  font-size: 18px;
+}

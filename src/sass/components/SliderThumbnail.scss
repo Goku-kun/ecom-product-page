@@ -1,0 +1,26 @@
+@import "./../helpers/variables";
+
+.small-images-container {
+  display: none;
+}
+
+@media screen and (min-width: 1440px) {
+  .small-images-container {
+    display: flex;
+    justify-content: space-between;
+    margin-top: 2rem;
+    width: 100%;
+
+    .slider-thumbnail {
+      width: 80px;
+      height: 80px;
+      border-radius: 1rem;
+      border: 2px solid transparent;
+    }
+
+    .image-active {
+      opacity: 0.4;
+      border: 2px solid $primary-orange;
+    }
+  }
+}

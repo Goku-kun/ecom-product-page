@@ -1,32 +1,47 @@
-import React, { useState } from "react";
-import { useSelector } from "react-redux";
+import React from "react";
+import { useDispatch, useSelector } from "react-redux";
 import "./../sass/components/Navbar.scss";
 import { selectDefaultUser } from "../features/users/usersSlice";
 import Basket from "./Basket";
+import {
+  selectOverlayState,
+  makeOverlayHidden,
+  makeOverlayVisible,
+  toggleCartVisibility,
+  selectCartVisibilityState,
+} from "../features/pages/pageSlice";
 
 function Navbar() {
-  const [cartVisible, setcartVisible] = useState(false);
-  const [overlayVisible, setOverlayVisible] = useState(true);
+  const dispatch = useDispatch();
   const defaultUser = useSelector(selectDefaultUser);
-
-  function toggleCart() {
-    setcartVisible(!cartVisible);
-  }
-
-  function closeOverlay() {
-    setOverlayVisible(false);
-  }
+  const isOverlayVisible = useSelector(selectOverlayState);
+  const isCartVisible = useSelector(selectCartVisibilityState);
 
   return (
     <nav>
-      <img src={"images/logo.svg"} alt="logo" />
-      <button className="overlay-close-btn" onClick={closeOverlay}>
-        &times;
-      </button>
       <div
-        className="main-nav"
-        style={{ width: overlayVisible ? "70%" : "0%" }}
+        className={isOverlayVisible ? "disable" : ""}
+        onClick={() => dispatch(makeOverlayHidden())}
+      />
+      <button
+        className="overlay-open-btn"
+        onClick={() => dispatch(makeOverlayVisible())}
       >
+        <img src="images/icon-menu.svg" alt="hamburger button icon" />
+      </button>
+      <img className="brand-logo" src={"images/logo.svg"} alt="logo" />
+      <div
+        className={`main-nav ${
+          isOverlayVisible ? "main-nav-visible" : "main-nav-hidden"
+        }`}
+      >
+        <button
+          className="overlay-close-btn"
+          onClick={() => dispatch(makeOverlayHidden())}
+        >
+          &times;
+        </button>
+
         <div className="overlay-content">
           <a href="#">Collections</a>
           <a href="#">Men</a>
@@ -36,7 +51,10 @@ function Navbar() {
         </div>
       </div>
       <div className="cart-profile">
-        <button onClick={toggleCart} className="cart-button">
+        <button
+          onClick={() => dispatch(toggleCartVisibility())}
+          className="cart-button"
+        >
           <img
             alt="cart logo"
             className="cart-logo"
@@ -48,7 +66,7 @@ function Navbar() {
           className="avatar"
           src={defaultUser.displayPicture}
         />
-        <Basket isVisible={cartVisible} />
+        <Basket isVisible={isCartVisible} />
       </div>
     </nav>
   );

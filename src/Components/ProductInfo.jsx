@@ -10,10 +10,10 @@ function productInfo() {
   };
 
   return (
-    <div id="product-info-container">
+    <div id="product-info-elements">
       <p id="company-name">{productInfo.companyName.toUpperCase()}</p>
 
-      <h1 id="product-name">{productInfo.productName}</h1>
+      <p id="product-name">{productInfo.productName}</p>
       <p id="product-description">{productInfo.productDescription}</p>
     </div>
   );

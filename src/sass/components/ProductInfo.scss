@@ -1,8 +1,8 @@
 @import "../helpers/variables";
 
-#product-info-container {
-  // width: 100%;
-  // margin: 20px;
+#product-info-elements {
+  margin: 0;
+  padding: 0;
 }
 
 #company-name {
@@ -13,9 +13,10 @@
 }
 
 #product-name {
-  margin-top: 0;
+  font-weight: bold;
   font-size: 2.5rem;
-  margin-bottom: 0;
+  margin: 0;
+  padding: 0;
 }
 
 #product-description {

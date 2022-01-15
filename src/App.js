@@ -3,6 +3,7 @@ import "./App.scss";
 import ProductPage from "./Components/ProductPage";
 
 function App() {
+
   return (
     <div className="App">
       <ProductPage />

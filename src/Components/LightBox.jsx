@@ -73,6 +73,7 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
                 if (event.key === "Enter") handleNextImage();
               }}
             >
+            <div className={`white-circle-lightbox`} onClick={handleNextImage}>
               <img
                 id="right-arrow"
                 className="arrow-icon"

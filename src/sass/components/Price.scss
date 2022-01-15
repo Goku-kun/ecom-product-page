@@ -18,11 +18,11 @@
   height: 40px;
   justify-content: space-between;
   align-items: center;
-  // margin: 10px;
 
   @media (min-width: 430px) {
     flex-direction: column;
     align-items: flex-start;
+    margin-bottom: 3rem;
   }
 }
 
@@ -33,7 +33,7 @@
 
 #current-price {
   font-weight: bold;
-  font-size: 1.5rem;
+  font-size: 2rem;
   margin-bottom: 0;
   margin-top: 0;
 }
@@ -41,26 +41,29 @@
 #percent-off {
   color: $primary-orange;
   background-color: $primary-pale-orange;
-  padding: 5px;
+  padding: 2px;
   border-radius: 8px;
-  font-size: 1rem;
+  font-size: 1.2rem;
   font-weight: bold;
   margin-bottom: 0;
   margin-top: 0;
-  margin-left: 10px;
+  margin-left: 20px;
   box-sizing: border-box;
+  align-self: center;
 }
 
 #list-price {
   color: $grayish-blue;
   position: relative;
-  font-size: 0.8rem;
+  font-size: 1.2rem;
   font-weight: bold;
-  margin-bottom: 5px;
-  align-self: baseline;
+  margin-top: 0;
+  margin-bottom: 0;
+  align-self: center;
 
   @media (min-width: 430px) {
     margin-bottom: 0;
-    margin-top: 3px;
+    margin-top: 0.3rem;
+    align-self: flex-start;
   }
 }

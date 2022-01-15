@@ -10,12 +10,14 @@ import ProductInfoContainer from "./ProductInfoContainer";
 import "../sass/components/ProductPage.scss";
 
 export default function ProductPage() {
-  const imagesArray = useSelector(selectDefaultProduct).displayPictures;
+  const defaultProduct = useSelector(selectDefaultProduct);
   return (
     <div id="product-page">
       <Navbar />
-      <Slider imagesArray={imagesArray} />
-      <ProductInfoContainer />
+      <div className="main">
+        <Slider imagesArray={defaultProduct.displayPictures} />
+        <ProductInfoContainer product={defaultProduct} />
+      </div>
     </div>
   );
 }

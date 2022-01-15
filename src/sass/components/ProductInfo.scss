@@ -1,7 +1,7 @@
 @import "../helpers/variables";
 
 #product-info-elements {
-  margin: 0;
+  margin: 0.5rem 0;
   padding: 0;
 }
 
@@ -10,16 +10,28 @@
   font-weight: bold;
   margin-bottom: 10px;
   font-size: 14px;
+  letter-spacing: 1px;
 }
 
 #product-name {
   font-weight: bold;
-  font-size: 2.5rem;
+  font-size: 2rem;
   margin: 0;
   padding: 0;
 }
 
 #product-description {
-  color: $dark-grayish-blue;
-  font-size: 18px;
+  color: $grayish-blue;
+  font-size: 1.1rem;
+}
+
+@media screen and (min-width: 435px) {
+  #company-name {
+    margin-top: 2rem;
+  }
+
+  #product-name {
+    font-size: 3rem;
+    margin-top: 1rem;
+  }
 }

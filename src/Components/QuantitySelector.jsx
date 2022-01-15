@@ -15,11 +15,11 @@ export default function QuantitySelector() {
 
   return (
     <div className="quantity-selector">
-      <SecondaryButton onClick={reduce} quantity={minQuantity}>
+      <SecondaryButton onClick={reduce} disabled={minQuantity}>
         -
       </SecondaryButton>
-      <div>{quantity}</div>
-      <SecondaryButton onClick={increment} quantity={maxQuantity}>
+      <div className="quantity-value">{quantity}</div>
+      <SecondaryButton onClick={increment} disabled={maxQuantity}>
         +
       </SecondaryButton>
     </div>

@@ -1,0 +1,29 @@
+@import "../helpers/variables";
+
+#product-info-container {
+  padding: 20px;
+  margin: 0;
+}
+
+#cart-icon {
+  margin-right: 15px;
+}
+
+.add-to-cart-button {
+  width: 100%;
+  padding: 0.5rem 0;
+}
+
+@media screen and (min-width: 435px) {
+  .flex-container-quantity-checkout {
+    margin-top: 1rem;
+    display: flex;
+    gap: 1rem;
+    align-items: center;
+    width: 90%;
+  }
+
+  .add-to-cart-button {
+    height: 3.5rem;
+  }
+}

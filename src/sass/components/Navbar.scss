@@ -1,0 +1,172 @@
+@import "../helpers/variables";
+
+nav {
+  margin: 5% 3%;
+  display: flex;
+
+  // for disabling the background when the overlay is open
+  .disable {
+    position: fixed;
+    top: 0;
+    left: 0;
+    background: #000;
+    opacity: 0.8;
+    z-index: 9;
+    height: 100%;
+    width: 100%;
+    transition: 0.5s;
+  }
+
+  .brand-logo {
+    margin: 1% 6rem 0% 5%;
+    width: auto;
+    height: 20px;
+  }
+
+  .overlay-open-btn {
+    background-color: transparent;
+    border: 0px;
+    margin-right: 1rem;
+    width: 15px;
+  }
+
+  .main-nav {
+    position: absolute;
+    top: 0;
+    left: 0;
+    z-index: 11;
+    height: 100%;
+    overflow-x: hidden;
+    transition: 0.5s;
+    background-color: rgba(255, 255, 255, 1);
+
+    .overlay-close-btn {
+      position: relative;
+      background-color: transparent;
+      border: 0px;
+      font-size: 3rem;
+      z-index: 12;
+      margin-left: 0.8rem;
+      margin-top: 0.5rem;
+    }
+
+    .overlay-content {
+      display: flex;
+      flex-direction: column;
+      gap: 1rem;
+      align-items: flex-start;
+      margin-left: 1.5rem;
+      margin-top: 3rem;
+
+      a {
+        color: black;
+        padding-bottom: 0;
+        font-weight: bold;
+        text-decoration: none;
+      }
+    }
+  }
+  .main-nav-visible {
+    width: 60%;
+  }
+  .main-nav-hidden {
+    width: 0%;
+  }
+
+  .cart-profile {
+    .cart-button {
+      background-color: transparent;
+      border: 0px;
+      cursor: pointer;
+
+      .cart-logo {
+        width: 30px;
+        height: auto;
+        margin-right: 1rem;
+        color: $black;
+      }
+    }
+
+    .avatar {
+      width: 30px;
+      height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  nav {
+    margin: 3% 12%;
+    display: flex;
+    justify-content: space-between;
+    border-bottom: 1px solid $primary-pale-orange;
+
+    .overlay-open-btn {
+      display: none;
+    }
+
+    .brand-logo {
+      height: 100%;
+      width: auto;
+      margin: 0;
+    }
+
+    .main-nav {
+      position: relative;
+      width: 100%;
+
+      .overlay-close-btn {
+        display: none;
+      }
+
+      .overlay-content {
+        display: flex;
+        flex-direction: row;
+        margin-top: 0;
+        margin-left: 5%;
+        gap: 2.3rem;
+        justify-self: flex-start;
+        a {
+          text-decoration: none;
+          color: $dark-grayish-blue;
+          padding-top: 0.1rem;
+          padding-bottom: 2.3rem;
+          font-size: 0.8rem;
+          font-weight: normal;
+        }
+        a:hover {
+          padding-bottom: 2rem;
+          border-bottom: 4px solid $primary-orange;
+          color: $black;
+        }
+      }
+    }
+
+    .cart-profile {
+      display: flex;
+      margin-top: -0.7rem;
+
+      .cart-button {
+        margin-right: 3rem;
+        margin-top: -1rem;
+
+        .cart-logo {
+          width: $cart-logo;
+          height: $cart-logo;
+        }
+      }
+
+      .avatar {
+        border-radius: 50%;
+        width: $avatar-size;
+        height: $avatar-size;
+        border: 2px solid transparent;
+      }
+
+      .avatar:hover {
+        border: 2px solid $primary-orange;
+        cursor: pointer;
+      }
+    }
+  }
+}

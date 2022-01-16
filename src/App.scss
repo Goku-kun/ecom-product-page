@@ -1,0 +1,6 @@
+@import "./sass/helpers/variables";
+
+::selection {
+  color: $primary-orange;
+  background-color: $primary-pale-orange;
+}

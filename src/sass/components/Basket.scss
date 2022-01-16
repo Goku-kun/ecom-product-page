@@ -1,0 +1,65 @@
+@import "../helpers/variables";
+
+.basket-content {
+  width: 25rem;
+  position: absolute;
+
+  // z-index needs to be less than the overlay menu
+  z-index: 5;
+  top: 7rem;
+  transform: translateX(-71.5%) scaleY(0);
+  -webkit-transform: translateX(-71.5%) scaleY(0);
+  transform-origin: top;
+  -webkit-transform-origin: top;
+  background-color: #fff;
+  border-radius: 0.5rem;
+  box-shadow: 0 5px 20px rgba(0, 0, 0, 0.25);
+  padding-bottom: 2.7rem;
+  transition: all 0.2s ease-in-out;
+
+  .basket-checkout-button {
+    margin-left: 1.1rem;
+    margin-top: 2rem;
+  }
+}
+
+.basket-content-visible {
+  transform: translateX(-71.5%) scaleY(1);
+  -webkit-transform: translateX(-71.5%) scaleY(1);
+  padding-bottom: 2rem;
+}
+
+.basket-heading {
+  color: $very-vark-blue;
+  padding: 1.2rem 1.5rem;
+  margin: 0;
+  border-bottom: 1px solid $grayish-blue;
+  font-weight: 700;
+  font-size: 1rem;
+}
+
+.basket-empty {
+  color: $dark-grayish-blue;
+  text-align: center;
+  padding: 4rem 0rem;
+  font-weight: 700;
+}
+
+@media only screen and (min-width: 1440px) {
+  .basket-content {
+    width: 22.5rem;
+    position: absolute;
+    left: 80%;
+    top: 11%;
+
+    z-index: 20;
+
+    transform: translateX(-50%) scaleY(0);
+    -webkit-transform: translateX(-50%) scaleY(0);
+  }
+  .basket-content-visible {
+    transform: translateX(-50%) scaleY(1);
+    -webkit-transform: translateX(-50%) scaleY(1);
+    padding-bottom: 2rem;
+  }
+}

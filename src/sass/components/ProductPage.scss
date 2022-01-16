@@ -1,0 +1,19 @@
+@import "../helpers/variables";
+
+#product-page {
+  display: flex;
+  flex-direction: column;
+}
+
+@media screen and (min-width: 435px) {
+  #product-page {
+    display: block;
+  }
+
+  .main {
+    display: flex;
+    width: 70%;
+    margin: 4rem auto;
+    gap: 5rem;
+  }
+}

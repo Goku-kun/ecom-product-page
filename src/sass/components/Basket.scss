@@ -1,6 +1,5 @@
 @import "../helpers/variables";
 
-
 .basket-content {
   width: 25rem;
   position: absolute;
@@ -8,8 +7,8 @@
   // z-index needs to be less than the overlay menu
   z-index: 5;
   top: 7rem;
-  transform: translateX(-70.5%) scaleY(0);
-  -webkit-transform: translateX(-70.5%) scaleY(0);
+  transform: translateX(-71.5%) scaleY(0);
+  -webkit-transform: translateX(-71.5%) scaleY(0);
   transform-origin: top;
   -webkit-transform-origin: top;
   background-color: #fff;
@@ -25,8 +24,8 @@
 }
 
 .basket-content-visible {
-  transform: translateX(-70.5%) scaleY(1);
-  -webkit-transform: translateX(-70.5%) scaleY(1);
+  transform: translateX(-71.5%) scaleY(1);
+  -webkit-transform: translateX(-71.5%) scaleY(1);
   padding-bottom: 2rem;
 }
 

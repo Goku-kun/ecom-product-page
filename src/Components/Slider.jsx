@@ -40,12 +40,17 @@ export default function Slider(props) {
 
   return (
     <div className="slider-container">
-      <LightBox
-        images={props.imagesArray}
-        setLightBoxState={setLightBoxState}
-        lightBoxState={lightBoxState}
-      />
-      <div id="slider" style={url} onClick={() => setLightBoxState(true)}>
+      <div
+        id="slider"
+        tabIndex={0}
+        style={url}
+        onClick={() => setLightBoxState(true)}
+        onKeyUp={(event) => {
+          if (event.key === "Enter") {
+            setLightBoxState(true);
+          }
+        }}
+      >
         <div
           className={`white-circle ${
             props.type === "lightbox" ? "lightbox-show-button" : ""
@@ -71,6 +76,11 @@ export default function Slider(props) {
           />
         </div>
       </div>
+      <LightBox
+        images={props.imagesArray}
+        setLightBoxState={setLightBoxState}
+        lightBoxState={lightBoxState}
+      />
       <div className="slider-photos">
         <SliderThumbail
           onClickThumbnail={onClickThumbnail}

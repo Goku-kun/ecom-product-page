@@ -1,7 +1,7 @@
 @import "../helpers/variables";
 
 .quantity-selector {
-  margin: 3% 10%;
+  margin: 4% 0%;
   display: flex;
   align-items: center;
   justify-content: space-between;
@@ -9,4 +9,17 @@
   border-radius: 0.5rem;
   height: 3rem;
   font-weight: bold;
+}
+
+@media screen and (min-width: 435px) {
+  .quantity-selector {
+    margin: 0;
+    height: 3.5rem;
+    width: 15rem;
+
+    .quantity-value {
+      width: 3rem;
+      text-align: center;
+    }
+  }
 }

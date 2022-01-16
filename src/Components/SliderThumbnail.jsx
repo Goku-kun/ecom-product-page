@@ -20,8 +20,17 @@ function SliderThumbnail({ images, onClickThumbnail, currentThumbnailActive }) {
         return (
           <img
             src={image}
+            tabIndex={0}
             className={`slider-thumbnail ${focus[index] ? "image-active" : ""}`}
             key={image}
+            onKeyUp={(event) => {
+              if (event.key === "Enter") {
+                onClickThumbnail(index);
+                let newFocus = Array(images.length).fill(false);
+                newFocus[index] = true;
+                setFocus(newFocus);
+              }
+            }}
             onClick={() => {
               onClickThumbnail(index);
               let newFocus = Array(images.length).fill(false);

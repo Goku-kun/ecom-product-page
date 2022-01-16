@@ -42,6 +42,10 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
           onClick={() => {
             setLightBoxState(false);
           }}
+          onKeyUp={(event) => {
+            if (event.key === "Enter") setLightBoxState(false);
+          }}
+          tabIndex={0}
         >
           &times;
         </button>
@@ -50,6 +54,10 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
             <div
               className={`white-circle-lightbox`}
               onClick={handlePreviousImage}
+              onKeyUp={(event) => {
+                if (event.key === "Enter") handlePreviousImage();
+              }}
+              tabIndex={0}
             >
               <img
                 id="left-arrow"
@@ -57,7 +65,14 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
                 src="./images/icon-previous.svg"
               />
             </div>
-            <div className={`white-circle-lightbox`} onClick={handleNextImage}>
+            <div
+              className={`white-circle-lightbox`}
+              tabIndex={0}
+              onClick={handleNextImage}
+              onKeyUp={(event) => {
+                if (event.key === "Enter") handleNextImage();
+              }}
+            >
               <img
                 id="right-arrow"
                 className="arrow-icon"

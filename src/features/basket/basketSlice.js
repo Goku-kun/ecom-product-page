@@ -2,42 +2,21 @@ import { createSlice } from "@reduxjs/toolkit";
 
 const options = {
   name: "basket",
-  initialState: [
-    {
-      id: 0,
-      name: "Fall Limited Edition Sneakers",
-      quantity: 1,
-      unitPriceInUsd: 125,
-      thumbnail: "images/image-product-1-thumbnail.jpg",
-    },
-  ],
+  initialState: [],
   reducers: {
-    addProduct(state, action) {
+    addProductToBasket(state, action) {
       let product = state.find(
         (basketProduct) => basketProduct.id === action.payload.id
       );
-      if (product === undefined) {
+      if (product === undefined || action.payload.quantity === undefined) {
         state.push({ quantity: 1, ...action.payload });
         return state;
       } else {
-        product.quantity += 1;
+        product.quantity += action.payload.quantity;
         return state;
       }
     },
-    removeOneProduct(state, action) {
-      let product = state.find(
-        (basketProduct) => basketProduct.id === action.payload.id
-      );
-      if (product.quantity > 1) {
-        product.quantity -= 1;
-        return state;
-      } else if (product.quantity === 1) {
-        return state.filter(
-          (basketProduct) => basketProduct.id !== action.payload.id
-        );
-      }
-    },
-    removeProduct(state, action) {
+    removeProductFromBasket(state, action) {
       return state.filter(
         (basketProduct) => basketProduct.id !== action.payload.id
       );
@@ -51,7 +30,7 @@ export function selectBasket(state) {
 
 const basketSlice = createSlice(options);
 
-export const { addProduct, removeOneProduct, removeProduct } =
+export const { addProductToBasket, removeProductFromBasket } =
   basketSlice.actions;
 
 export default basketSlice.reducer;

@@ -7,7 +7,13 @@ const options = {
   initialState: [
     {
       id: 0,
-      name: "Shoe",
+      companyName: "SNEAKER COMPANY",
+      name: "Fall Limited Edition Sneakers",
+      price: 250,
+      discount: 50,
+      maxQuantityAvailable: 10,
+      description:
+        "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer",
       displayPictures: [
         "images/image-product-1.jpg",
         "images/image-product-2.jpg",
@@ -36,16 +42,12 @@ const options = {
   },
 };
 
-const productSlice = createSlice(options);
+const productsSlice = createSlice(options);
 
 export function selectProducts(state) {
   return state.products;
 }
 
-export function selectDefaultProduct(state) {
-  return state.products.find((product) => product.id === 0);
-}
+export const { addproduct, removeproduct } = productsSlice.actions;
 
-export const { addproduct, removeproduct } = productSlice.actions;
-
-export default productSlice.reducer;
+export default productsSlice.reducer;

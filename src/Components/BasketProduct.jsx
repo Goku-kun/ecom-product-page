@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeProduct } from "../features/basket/basketSlice";
+import { removeProductFromBasket } from "../features/basket/basketSlice";
 import "../sass/components/BasketProduct.scss";
 
 function BasketProduct(props) {
@@ -23,7 +23,7 @@ function BasketProduct(props) {
         </div>
         <button
           className="remove-product"
-          onClick={() => dispatch(removeProduct({ id: props.id }))}
+          onClick={() => dispatch(removeProductFromBasket({ id: props.id }))}
         >
           <img src="images/icon-delete.svg" alt="remove product" />
         </button>

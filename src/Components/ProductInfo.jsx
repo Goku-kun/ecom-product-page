@@ -1,22 +1,20 @@
 import React from "react";
+import PropTypes from "prop-types";
 import "./../sass/components/ProductInfo.scss";
 
-function productInfo() {
-  const productInfo = {
-    companyName: "Sneaker Company",
-    productName: "Fall Limited Edition Sneakers",
-    productDescription:
-      "These low-profile sneakers are your perfect casual wear companion. Featuring a durable rubber outer sole, they'll withstand everything the weather can offer",
-  };
-
+function ProductInfo({ product }) {
   return (
     <div id="product-info-elements">
-      <p id="company-name">{productInfo.companyName.toUpperCase()}</p>
+      <p id="company-name">{product.companyName.toUpperCase()}</p>
 
-      <p id="product-name">{productInfo.productName}</p>
-      <p id="product-description">{productInfo.productDescription}</p>
+      <p id="product-name">{product.name}</p>
+      <p id="product-description">{product.description}</p>
     </div>
   );
 }
 
-export default productInfo;
+ProductInfo.propTypes = {
+  product: PropTypes.object.isRequired,
+};
+
+export default ProductInfo;

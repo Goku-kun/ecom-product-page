@@ -1,22 +1,46 @@
-import React from "react";
-// import { PropTypes } from "prop-types";
+import React, { useState } from "react";
+import { useDispatch } from "react-redux";
+import PropTypes from "prop-types";
 import ProductInfo from "./ProductInfo";
 import Price from "./Price";
 import QuantitySelector from "./QuantitySelector";
 import CheckoutButton from "./CheckoutButton";
+import { addProductToBasket } from "../features/basket/basketSlice";
 import "../sass/components/ProductInfoContainer.scss";
 
-export default function ProductInfoContainer() {
+export default function ProductInfoContainer({ product }) {
+  const [
+    internalQuantityForQuantitySelector,
+    setInternalQuantityForQuantitySelector,
+  ] = useState(0);
+
+  const dispatch = useDispatch();
+
   return (
     <div id="product-info-container">
-      <ProductInfo />
-      <Price listPrice={250} percentOff={50} />
+      <ProductInfo product={product} />
+      <Price listPrice={product.price} percentOff={product.discount} />
       <div className="flex-container-quantity-checkout">
-        <QuantitySelector style={{ width: "100%" }} />
+        <QuantitySelector
+          internalQuantityForQuantitySelector={
+            internalQuantityForQuantitySelector
+          }
+          setInternalQuantityForQuantitySelector={
+            setInternalQuantityForQuantitySelector
+          }
+        />
         <CheckoutButton
           type="add-to-cart-button"
-          handleClick={() => {}}
-          width={"100%"}
+          handleClick={() => {
+            if (internalQuantityForQuantitySelector === 0) return;
+            dispatch(
+              addProductToBasket({
+                ...product,
+                quantity: internalQuantityForQuantitySelector,
+              })
+            );
+            setInternalQuantityForQuantitySelector(0);
+          }}
         >
           <img
             id="cart-icon"
@@ -29,3 +53,7 @@ export default function ProductInfoContainer() {
     </div>
   );
 }
+
+ProductInfoContainer.propTypes = {
+  product: PropTypes.object.isRequired,
+};

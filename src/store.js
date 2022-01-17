@@ -9,6 +9,6 @@ export default configureStore({
     users: userReducer,
     products: productsReducer,
     basket: basketReducer,
-    pages: pageReducer,
+    page: pageReducer,
   },
 });

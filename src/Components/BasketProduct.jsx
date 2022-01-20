@@ -1,7 +1,7 @@
 import PropTypes from "prop-types";
 import React from "react";
 import { useDispatch } from "react-redux";
-import { removeProduct } from "../features/basket/basketSlice";
+import { removeProductFromBasket } from "../features/basket/basketSlice";
 import "../sass/components/BasketProduct.scss";
 
 function BasketProduct(props) {
@@ -14,16 +14,22 @@ function BasketProduct(props) {
         <div className="basket-product-information">
           <p>{props.name}</p>
           <p>
-            ${props.unitPriceInUsd.toFixed(2)} x {props.quantity}
+            {/* props.discount is the percent off as an integer, so the / 100 converts it into a decimal for proper calculation */}
+            ${((props.unitPriceInUsd * props.discount) / 100).toFixed(2)} x{" "}
+            {props.quantity}
             {"   "}
             <strong>
-              ${(props.unitPriceInUsd * props.quantity).toFixed(2)}
+              $
+              {(
+                ((props.unitPriceInUsd * props.discount) / 100) *
+                props.quantity
+              ).toFixed(2)}
             </strong>
           </p>
         </div>
         <button
           className="remove-product"
-          onClick={() => dispatch(removeProduct({ id: props.id }))}
+          onClick={() => dispatch(removeProductFromBasket({ id: props.id }))}
         >
           <img src="images/icon-delete.svg" alt="remove product" />
         </button>
@@ -38,6 +44,7 @@ BasketProduct.propTypes = {
   thumbnail: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
   id: PropTypes.number.isRequired,
+  discount: PropTypes.number.isRequired,
 };
 
 export default BasketProduct;

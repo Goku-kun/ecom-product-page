@@ -36,7 +36,12 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
     <div
       className={`lightbox ${lightBoxState === true ? "lightbox-visible" : ""}`}
     >
-      <div className="modal">
+      <div
+        className="modal"
+        onKeyUp={(event) => {
+          if (event.key === "Escape") setLightBoxState(false);
+        }}
+      >
         <button
           className="remove-lightbox"
           onClick={() => {
@@ -59,11 +64,19 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
               }}
               tabIndex={0}
             >
-              <img
-                id="left-arrow"
+              <svg
+                viewBox="0 0 12 18"
+                xmlns="http://www.w3.org/2000/svg"
                 className="arrow-icon"
-                src="./images/icon-previous.svg"
-              />
+              >
+                <path
+                  d="M11 1 3 9l8 8"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
             </div>
             <div
               className={`white-circle-lightbox`}
@@ -73,11 +86,19 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
                 if (event.key === "Enter") handleNextImage();
               }}
             >
-              <img
-                id="right-arrow"
+              <svg
+                xmlns="http://www.w3.org/2000/svg"
+                viewBox="0 0 12 18"
                 className="arrow-icon"
-                src="./images/icon-next.svg"
-              />
+              >
+                <path
+                  d="m2 1 8 8-8 8"
+                  stroke="currentColor"
+                  strokeWidth="3"
+                  fill="none"
+                  fillRule="evenodd"
+                />
+              </svg>
             </div>
           </div>
           <div className="slider-photos">

@@ -36,6 +36,10 @@
       font-size: 3.5rem;
       color: white;
       cursor: pointer;
+
+      &:hover {
+        color: $primary-orange;
+      }
     }
   }
   .modal-content {
@@ -71,6 +75,10 @@
       align-items: center;
       background-color: white;
       cursor: pointer;
+
+      &:hover svg {
+        color: $primary-orange;
+      }
 
       // to not allow selecting arrows
       -webkit-touch-callout: none; /* iOS Safari */

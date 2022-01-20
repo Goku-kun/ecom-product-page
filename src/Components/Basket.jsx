@@ -8,6 +8,7 @@ import "./../sass/components/Basket.scss";
 
 function Basket({ isVisible }) {
   const basketProducts = useSelector(selectBasket);
+  console.log(basketProducts);
 
   function handleCheckout() {
     // We're not handling checkout implementation since there is no checkout page
@@ -27,8 +28,9 @@ function Basket({ isVisible }) {
             return (
               <BasketProduct
                 name={product.name}
-                unitPriceInUsd={product.unitPriceInUsd}
-                thumbnail={product.thumbnail}
+                unitPriceInUsd={product.price}
+                discount={product.discount}
+                thumbnail={product.thumbnailPictures[0]}
                 quantity={product.quantity}
                 id={product.id}
                 key={new Date().getTime()}
@@ -36,7 +38,6 @@ function Basket({ isVisible }) {
             );
           })}
           <CheckoutButton
-            width="90%"
             type="basket-checkout-button"
             handleClick={handleCheckout}
           >

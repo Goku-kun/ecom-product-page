@@ -36,7 +36,12 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
     <div
       className={`lightbox ${lightBoxState === true ? "lightbox-visible" : ""}`}
     >
-      <div className="modal">
+      <div
+        className="modal"
+        onKeyUp={(event) => {
+          if (event.key === "Escape") setLightBoxState(false);
+        }}
+      >
         <button
           className="remove-lightbox"
           onClick={() => {

@@ -44,11 +44,13 @@ export default function Slider(props) {
         id="slider"
         tabIndex={0}
         style={url}
-        onClick={() => setLightBoxState(true)}
+        onClick={() => {
+          if (window.innerWidth > 1400) setLightBoxState(true);
+        }}
         onKeyUp={(event) => {
           if (event.key === "Enter") {
             setLightBoxState(true);
-          }
+          } else if (event.key === "Escape") setLightBoxState(false);
         }}
       >
         <div
@@ -63,12 +65,7 @@ export default function Slider(props) {
             src="./images/icon-previous.svg"
           />
         </div>
-        <div
-          className={`white-circle ${
-            props.type === "lightbox" ? "lightbox-show-button" : ""
-          }`}
-          onClick={handleNextImage}
-        >
+        <div className={`white-circle`} onClick={handleNextImage}>
           <img
             id="right-arrow"
             className="arrow-icon"

@@ -1,10 +1,11 @@
 import { createSlice } from "@reduxjs/toolkit";
 
 const options = {
-  name: "pages",
+  name: "page",
   initialState: {
     isOverlayVisible: false,
     isCartVisible: false,
+    currentProductId: 0,
   },
   reducers: {
     makeOverlayVisible(state) {
@@ -19,19 +20,30 @@ const options = {
       state.isCartVisible = !state.isCartVisible;
       return state;
     },
+    setCurrentProductId(state, action) {
+      state.currentProductId = action.payload;
+    },
   },
 };
 
-const pagesSlice = createSlice(options);
+const pageSlice = createSlice(options);
 
 export function selectOverlayState(state) {
-  return state.pages.isOverlayVisible;
+  return state.page.isOverlayVisible;
 }
 export function selectCartVisibilityState(state) {
-  return state.pages.isCartVisible;
+  return state.page.isCartVisible;
 }
 
-export const { makeOverlayHidden, makeOverlayVisible, toggleCartVisibility } =
-  pagesSlice.actions;
+export function selectCurrentProductId(state) {
+  return state.page.currentProductId;
+}
 
-export default pagesSlice.reducer;
+export const {
+  makeOverlayHidden,
+  makeOverlayVisible,
+  toggleCartVisibility,
+  setCurrentProductId,
+} = pageSlice.actions;
+
+export default pageSlice.reducer;

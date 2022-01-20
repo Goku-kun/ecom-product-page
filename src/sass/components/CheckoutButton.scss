@@ -39,12 +39,3 @@ $btnColor: $primary-orange;
     box-shadow: 0 0 0 4px scale-color($btnColor, $lightness: -40%);
   }
 }
-.basket-checkout-button {
-  width: 90%;
-}
-
-@media only screen and (min-width: 1440px) {
-  .main-button {
-    padding: 1rem 0.75em;
-  }
-}

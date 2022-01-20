@@ -6,7 +6,7 @@
 
   // z-index needs to be less than the overlay menu
   z-index: 5;
-  top: 7rem;
+  top: 5rem;
   transform: translateX(-71.5%) scaleY(0);
   -webkit-transform: translateX(-71.5%) scaleY(0);
   transform-origin: top;
@@ -20,6 +20,7 @@
   .basket-checkout-button {
     margin-left: 1.1rem;
     margin-top: 2rem;
+    width: 90%;
   }
 }
 
@@ -45,12 +46,11 @@
   font-weight: 700;
 }
 
-@media only screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .basket-content {
     width: 22.5rem;
-    position: absolute;
-    left: 80%;
-    top: 11%;
+    left: 79%;
+    top: 9%;
 
     z-index: 20;
 
@@ -61,5 +61,12 @@
     transform: translateX(-50%) scaleY(1);
     -webkit-transform: translateX(-50%) scaleY(1);
     padding-bottom: 2rem;
+  }
+}
+
+@media only screen and (min-width: 1440px) {
+  .basket-content {
+    left: 80%;
+    top: 11%;
   }
 }

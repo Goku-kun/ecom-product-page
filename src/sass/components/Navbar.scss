@@ -1,8 +1,11 @@
 @import "../helpers/variables";
 
 nav {
-  margin: 5% 3%;
+  margin: 5% 0%;
   display: flex;
+  justify-content: flex-start;
+  gap: 1rem;
+  width: 100vw;
 
   // for disabling the background when the overlay is open
   .disable {
@@ -18,15 +21,13 @@ nav {
   }
 
   .brand-logo {
-    margin: 1% 6rem 0% 5%;
-    width: auto;
+    margin: 1% 20% 0% 0.5rem;
     height: 20px;
   }
 
   .overlay-open-btn {
     background-color: transparent;
     border: 0px;
-    margin-right: 1rem;
     width: 15px;
   }
 
@@ -67,13 +68,16 @@ nav {
     }
   }
   .main-nav-visible {
-    width: 60%;
+    width: 70%;
   }
   .main-nav-hidden {
     width: 0%;
   }
 
   .cart-profile {
+    display: flex;
+    gap: 30%;
+
     .cart-button {
       background-color: transparent;
       border: 0px;
@@ -82,7 +86,6 @@ nav {
       .cart-logo {
         width: 30px;
         height: auto;
-        margin-right: 1rem;
         color: $black;
       }
     }
@@ -94,11 +97,11 @@ nav {
   }
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   nav {
-    margin: 3% 12%;
-    display: flex;
-    justify-content: space-between;
+    margin: 3% auto;
+    width: 80vw;
+    gap: 0%;
     border-bottom: 1px solid $primary-pale-orange;
 
     .overlay-open-btn {
@@ -113,21 +116,20 @@ nav {
 
     .main-nav {
       position: relative;
-      width: 100%;
+      width: 70%;
 
       .overlay-close-btn {
         display: none;
       }
 
       .overlay-content {
-        display: flex;
         flex-direction: row;
-        margin-top: 0;
-        margin-left: 5%;
-        gap: 2.3rem;
+        margin-top: 0.2rem;
+        margin-left: 7%;
+        gap: 1rem;
         justify-self: flex-start;
+
         a {
-          text-decoration: none;
           color: $dark-grayish-blue;
           padding-top: 0.1rem;
           padding-bottom: 2.3rem;
@@ -143,11 +145,10 @@ nav {
     }
 
     .cart-profile {
-      display: flex;
       margin-top: -0.7rem;
 
       .cart-button {
-        margin-right: 3rem;
+        margin-right: 0.1rem;
         margin-top: -1rem;
 
         .cart-logo {
@@ -166,6 +167,21 @@ nav {
       .avatar:hover {
         border: 2px solid $primary-orange;
         cursor: pointer;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  nav {
+    width: 70vw;
+
+    .main-nav {
+      width: 77%;
+
+      .overlay-content {
+        margin-left: 5%;
+        gap: 2.2rem;
       }
     }
   }

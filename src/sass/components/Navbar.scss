@@ -1,27 +1,29 @@
 @import "../helpers/variables";
 
+.disable {
+  position: fixed;
+  top: 0;
+  left: 0;
+  background: #000;
+  opacity: 0.8;
+  z-index: 9;
+  height: 100%;
+  width: 100%;
+  transition: 0.5s;
+}
+
 nav {
   margin: 5% 0%;
   display: flex;
   justify-content: flex-start;
   gap: 1rem;
-  width: 100vw;
+  width: 98vw;
+  padding-left: 2vw;
 
   // for disabling the background when the overlay is open
-  .disable {
-    position: fixed;
-    top: 0;
-    left: 0;
-    background: #000;
-    opacity: 0.8;
-    z-index: 9;
-    height: 100%;
-    width: 100%;
-    transition: 0.5s;
-  }
 
   .brand-logo {
-    margin: 1% 20% 0% 0.5rem;
+    margin: 1% 23vw 0% 0.5rem;
     height: 20px;
   }
 

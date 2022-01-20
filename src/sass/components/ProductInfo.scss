@@ -1,11 +1,11 @@
 @import "../helpers/variables";
 
-#product-info-elements {
+.product-info-elements {
   margin: 0.5rem 0;
   padding: 0;
 }
 
-#company-name {
+.company-name {
   color: $primary-orange;
   font-weight: bold;
   margin-bottom: 10px;
@@ -13,24 +13,35 @@
   letter-spacing: 1px;
 }
 
-#product-name {
+.product-name {
   font-weight: bold;
   font-size: 2rem;
   margin: 0;
   padding: 0;
 }
 
-#product-description {
+.product-description {
   color: $grayish-blue;
   font-size: 1.1rem;
 }
 
-@media screen and (min-width: 435px) {
-  #company-name {
+@media screen and (min-width: 1024px) {
+  .company-name {
     margin-top: 2rem;
   }
 
-  #product-name {
+  .product-name {
+    font-size: 2.4rem;
+    margin-top: 1.3rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .company-name {
+    margin-top: 2rem;
+  }
+
+  .product-name {
     font-size: 3rem;
     margin-top: 1rem;
   }

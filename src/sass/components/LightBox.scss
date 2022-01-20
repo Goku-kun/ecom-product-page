@@ -8,7 +8,7 @@
   display: none;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .lightbox {
     width: 100vw;
   }
@@ -30,7 +30,7 @@
     .remove-lightbox {
       position: absolute;
       top: 3%;
-      right: 31%;
+      right: 30%;
       background-color: transparent;
       border: 0px;
       font-size: 3.5rem;
@@ -45,9 +45,9 @@
   .modal-content {
     position: relative;
     width: 100%;
-    left: 32%;
+    left: 20%;
 
-    #slider-lightbox {
+    .slider-lightbox {
       display: flex;
       justify-content: space-between;
       align-items: center;
@@ -57,12 +57,12 @@
       background-repeat: no-repeat;
       background-position: center;
       aspect-ratio: 1;
-      width: 32rem;
+      width: 30rem;
       border-radius: 1rem;
     }
 
     .slider-photos {
-      width: 32rem;
+      width: 30rem;
     }
 
     .white-circle-lightbox {
@@ -75,6 +75,7 @@
       align-items: center;
       background-color: white;
       cursor: pointer;
+      margin: -20px;
 
       &:hover svg {
         color: $primary-orange;
@@ -89,14 +90,30 @@
       user-select: none; /* Non-prefixed version, currently
                                   supported by Chrome, Edge, Opera and Firefox */
 
-      @media (min-width: 430px) {
-        margin: -20px;
-      }
       .arrow-icon {
         height: 13px;
         width: 10px;
         pointer-events: none;
       }
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .modal {
+    .remove-lightbox {
+      right: 31%;
+    }
+  }
+  .modal-content {
+    left: 32%;
+
+    .slider-lightbox {
+      width: 32rem;
+    }
+
+    .slider-photos {
+      width: 32rem;
     }
   }
 }

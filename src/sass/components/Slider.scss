@@ -2,65 +2,77 @@
 
 .slider-container {
   width: 100vw;
-}
 
-#slider {
-  display: flex;
-  justify-content: space-between;
-  align-items: center;
-  align-self: center;
-  width: 100%;
-  background-size: 100%;
-  background-repeat: no-repeat;
-  background-position: center;
-  aspect-ratio: 1.2;
-
-  .white-circle {
-    margin: 10px;
-    height: 40px;
-    width: 40px;
-    border-radius: 50%;
+  .slider {
     display: flex;
-    justify-content: center;
+    justify-content: space-between;
     align-items: center;
-    background-color: white;
-
-    // to not allow selecting arrows
-    -webkit-touch-callout: none; /* iOS Safari */
-    -webkit-user-select: none; /* Safari */
-    -khtml-user-select: none; /* Konqueror HTML */
-    -moz-user-select: none; /* Old versions of Firefox */
-    -ms-user-select: none; /* Internet Explorer/Edge */
-    user-select: none; /* Non-prefixed version, currently
-                                  supported by Chrome, Edge, Opera and Firefox */
-
+    align-self: center;
+    width: 100%;
+    background-size: 100%;
+    background-repeat: no-repeat;
+    background-position: center;
+    aspect-ratio: 1.2;
     cursor: pointer;
 
-    @media (min-width: 430px) {
-      margin: -20px;
+    .white-circle {
+      margin: 10px;
+      height: 40px;
+      width: 40px;
+      border-radius: 50%;
+      display: flex;
+      justify-content: center;
+      align-items: center;
+      background-color: white;
+
+      // to not allow selecting arrows
+      -webkit-touch-callout: none; /* iOS Safari */
+      -webkit-user-select: none; /* Safari */
+      -khtml-user-select: none; /* Konqueror HTML */
+      -moz-user-select: none; /* Old versions of Firefox */
+      -ms-user-select: none; /* Internet Explorer/Edge */
+      user-select: none; /* Non-prefixed version, currently
+                                  supported by Chrome, Edge, Opera and Firefox */
+
+      cursor: pointer;
+    }
+
+    .arrow-icon {
+      height: 13px;
+      width: 10px;
+      pointer-events: none;
     }
   }
-  .arrow-icon {
-    height: 13px;
-    width: 10px;
-    pointer-events: none;
+}
+
+@media screen and (min-width: 1024px) {
+  .slider-container {
+    width: 350px;
+    margin-top: 1rem;
+
+    .slider {
+      aspect-ratio: 1;
+      width: 350px;
+      border-radius: 1rem;
+
+      .white-circle {
+        display: none;
+      }
+
+      .lightbox-show-button {
+        display: flex;
+      }
+    }
   }
 }
 
 @media screen and (min-width: 1440px) {
   .slider-container {
     width: 400px;
-  }
-  #slider {
-    aspect-ratio: 1;
-    width: 400px;
-    border-radius: 1rem;
+    margin-top: 0;
 
-    .white-circle {
-      display: none;
-    }
-    .lightbox-show-button {
-      display: flex;
+    .slider {
+      width: 400px;
     }
   }
 }

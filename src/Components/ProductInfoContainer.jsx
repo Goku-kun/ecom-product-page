@@ -17,7 +17,7 @@ export default function ProductInfoContainer({ product }) {
   const dispatch = useDispatch();
 
   return (
-    <div id="product-info-container">
+    <div className="product-info-container">
       <ProductInfo product={product} />
       <Price listPrice={product.price} percentOff={product.discount} />
       <div className="flex-container-quantity-checkout">

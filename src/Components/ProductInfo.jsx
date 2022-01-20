@@ -4,11 +4,11 @@ import "./../sass/components/ProductInfo.scss";
 
 function ProductInfo({ product }) {
   return (
-    <div id="product-info-elements">
-      <p id="company-name">{product.companyName.toUpperCase()}</p>
+    <div className="product-info-elements">
+      <p className="company-name">{product.companyName.toUpperCase()}</p>
 
-      <p id="product-name">{product.name}</p>
-      <p id="product-description">{product.description}</p>
+      <p className="product-name">{product.name}</p>
+      <p className="product-description">{product.description}</p>
     </div>
   );
 }

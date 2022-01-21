@@ -15,5 +15,13 @@
   },
   "rules": {
     "no-var": "error"
-  }
+  },
+  "overrides": [
+    {
+      "files": ["*.test.js"],
+      "rules": {
+        "no-undef": "off"
+      }
+    }
+  ]
 }

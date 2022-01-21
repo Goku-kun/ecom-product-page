@@ -11,7 +11,7 @@ function App({ productId }) {
   dispatch(setCurrentProductId(productId));
 
   return (
-    <div className="App">
+    <div className="App" data-testid="app-component-test">
       <ProductPage />
     </div>
   );

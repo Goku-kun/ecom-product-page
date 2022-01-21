@@ -4,7 +4,7 @@
   display: none;
 }
 
-@media screen and (min-width: 1440px) {
+@media screen and (min-width: 1024px) {
   .small-images-container {
     display: flex;
     justify-content: space-between;
@@ -16,11 +16,18 @@
       height: 80px;
       border-radius: 1rem;
       border: 2px solid transparent;
+      cursor: pointer;
     }
 
     .image-active {
       opacity: 0.4;
       border: 2px solid $primary-orange;
     }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .small-images-container {
+    margin-top: 1.5rem;
   }
 }

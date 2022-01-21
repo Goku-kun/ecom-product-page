@@ -8,7 +8,6 @@ import "./../sass/components/Basket.scss";
 
 function Basket({ isVisible }) {
   const basketProducts = useSelector(selectBasket);
-  console.log(basketProducts);
 
   function handleCheckout() {
     // We're not handling checkout implementation since there is no checkout page

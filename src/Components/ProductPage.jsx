@@ -13,7 +13,7 @@ export default function ProductPage() {
     return state.products.find((product) => product.id === currentProductId);
   });
   return (
-    <div id="product-page">
+    <div className="product-page">
       <Navbar />
       <div className="main">
         <Slider imagesArray={currentProduct.displayPictures} />

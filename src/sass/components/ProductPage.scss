@@ -1,18 +1,26 @@
 @import "../helpers/variables";
 
-#product-page {
+.product-page {
   display: flex;
   flex-direction: column;
 }
 
-@media screen and (min-width: 435px) {
-  #product-page {
+@media screen and (min-width: 1024px) {
+  .product-page {
     display: block;
   }
 
   .main {
     display: flex;
-    width: 70%;
+    width: 82vw;
+    margin: 4rem auto;
+    gap: 2.5rem;
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .main {
+    width: 68vw;
     margin: 4rem auto;
     gap: 5rem;
   }

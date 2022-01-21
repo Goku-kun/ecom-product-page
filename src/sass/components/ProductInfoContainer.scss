@@ -1,6 +1,6 @@
 @import "../helpers/variables";
 
-#product-info-container {
+.product-info-container {
   padding: 20px;
   margin: 0;
 }
@@ -14,16 +14,22 @@
   padding: 0.5rem 0;
 }
 
-@media screen and (min-width: 435px) {
+@media screen and (min-width: 1024px) {
   .flex-container-quantity-checkout {
     margin-top: 1rem;
     display: flex;
     gap: 1rem;
     align-items: center;
-    width: 90%;
-  }
+    width: 100%;
 
-  .add-to-cart-button {
-    height: 3.5rem;
+    .add-to-cart-button {
+      height: 3.5rem;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .flex-container-quantity-checkout {
+    width: 90%;
   }
 }

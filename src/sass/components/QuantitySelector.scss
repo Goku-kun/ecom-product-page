@@ -11,11 +11,22 @@
   font-weight: bold;
 }
 
-@media screen and (min-width: 435px) {
+@media screen and (min-width: 1024px) {
   .quantity-selector {
     margin: 0;
     height: 3.5rem;
-    width: 15rem;
+
+    .quantity-value {
+      width: 2rem;
+      text-align: center;
+    }
+  }
+}
+
+@media screen and (min-width: 1440px) {
+  .quantity-selector {
+    margin: 0;
+    height: 3.5rem;
 
     .quantity-value {
       width: 3rem;

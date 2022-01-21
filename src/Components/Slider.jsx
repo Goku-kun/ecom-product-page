@@ -41,11 +41,11 @@ export default function Slider(props) {
   return (
     <div className="slider-container">
       <div
-        id="slider"
+        className="slider"
         tabIndex={0}
         style={url}
         onClick={() => {
-          if (window.innerWidth > 1400) setLightBoxState(true);
+          if (window.innerWidth > 1020) setLightBoxState(true);
         }}
         onKeyUp={(event) => {
           if (event.key === "Enter") {

@@ -55,7 +55,7 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
           &times;
         </button>
         <div className="modal-content">
-          <div id="slider-lightbox" style={url}>
+          <div id="slider-lightbox" className="slider-lightbox" style={url}>
             <div
               className={`white-circle-lightbox`}
               onClick={handlePreviousImage}

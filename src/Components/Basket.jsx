@@ -16,7 +16,10 @@ function Basket({ isVisible }) {
 
   return (
     <div
-      className={`basket-content ${isVisible ? "basket-content-visible" : ""}`}
+      className={`basket-content ${
+        isVisible ? "basket-content-visible" : "basket-content-invisible"
+      }`}
+      data-testid="basket-component-test"
     >
       <h3 className="basket-heading">Cart</h3>
       {basketProducts.length === 0 ? (

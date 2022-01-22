@@ -3,7 +3,7 @@ import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import { selectBasket } from "../features/basket/basketSlice";
 import BasketProduct from "./BasketProduct";
-import CheckoutButton from "../Components/CheckoutButton";
+import PrimaryButton from "../Components/PrimaryButton";
 import "./../sass/components/Basket.scss";
 
 function Basket({ isVisible }) {
@@ -36,12 +36,12 @@ function Basket({ isVisible }) {
               />
             );
           })}
-          <CheckoutButton
+          <PrimaryButton
             type="basket-checkout-button"
             handleClick={handleCheckout}
           >
             Checkout
-          </CheckoutButton>
+          </PrimaryButton>
         </>
       )}
     </div>

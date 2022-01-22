@@ -1,8 +1,10 @@
 import React from "react";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 import "./../sass/components/ProductInfo.scss";
+import { selectCurrentProduct } from "../features/page/pageSlice";
 
-function ProductInfo({ product }) {
+function ProductInfo() {
+  const product = useSelector(selectCurrentProduct);
   return (
     <div className="product-info-elements">
       <p className="company-name">{product.companyName.toUpperCase()}</p>
@@ -12,9 +14,5 @@ function ProductInfo({ product }) {
     </div>
   );
 }
-
-ProductInfo.propTypes = {
-  product: PropTypes.object.isRequired,
-};
 
 export default ProductInfo;

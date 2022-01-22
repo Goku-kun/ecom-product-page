@@ -4,7 +4,7 @@ import PropTypes from "prop-types";
 import ProductInfo from "./ProductInfo";
 import Price from "./Price";
 import QuantitySelector from "./QuantitySelector";
-import CheckoutButton from "./CheckoutButton";
+import PrimaryButton from "./PrimaryButton";
 import { addProductToBasket } from "../features/basket/basketSlice";
 import "../sass/components/ProductInfoContainer.scss";
 
@@ -29,7 +29,7 @@ export default function ProductInfoContainer({ product }) {
             setInternalQuantityForQuantitySelector
           }
         />
-        <CheckoutButton
+        <PrimaryButton
           type="add-to-cart-button"
           handleClick={() => {
             if (internalQuantityForQuantitySelector === 0) return;
@@ -48,7 +48,7 @@ export default function ProductInfoContainer({ product }) {
             alt="cart icon"
           />
           <p id="add-to-cart">Add to cart</p>
-        </CheckoutButton>
+        </PrimaryButton>
       </div>
     </div>
   );

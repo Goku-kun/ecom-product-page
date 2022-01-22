@@ -6,9 +6,9 @@ export default function Price(props) {
   // Current price is calculated from the list price and percentage off. We can hardcode the sale price if necessary
 
   return (
-    <div className="price-container">
+    <div className="price-container" data-testid="price-component-test">
       <div className="current-percent-container">
-        <p className="current-price">
+        <p className="current-price" data-testid="price-discounted-test">
           $
           {
             // Subtract the percentage off to get the sale price

@@ -23,10 +23,11 @@ function Navbar() {
         className={isOverlayVisible ? "disable" : ""}
         onClick={() => dispatch(makeOverlayHidden())}
       />
-      <nav>
+      <nav data-testid="navbar-component-test">
         <button
           className="overlay-open-btn"
           onClick={() => dispatch(makeOverlayVisible())}
+          data-testid="navbar-overlayopen-test#2"
         >
           <img src="images/icon-menu.svg" alt="hamburger button icon" />
         </button>
@@ -35,6 +36,7 @@ function Navbar() {
           className={`main-nav ${
             isOverlayVisible ? "main-nav-visible" : "main-nav-hidden"
           }`}
+          data-testid="navbar-overlay-test"
         >
           <button
             className="overlay-close-btn"

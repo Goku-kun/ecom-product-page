@@ -10,6 +10,6 @@ test("renders the entire application", () => {
       <App productId={0} />
     </Provider>
   );
-  const appElement = screen.getByTestId(/app-component-test/i);
+  const appElement = screen.queryByTestId(/app-component-test/i);
   expect(appElement).toBeInTheDocument();
-});
+}, 10000);

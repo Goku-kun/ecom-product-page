@@ -52,6 +52,7 @@ export default function Slider(props) {
             setLightBoxState(true);
           } else if (event.key === "Escape") setLightBoxState(false);
         }}
+        data-testid="lightbox-visibility-test"
       >
         <div
           className={`white-circle ${

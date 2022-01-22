@@ -74,7 +74,6 @@ test("expect product to be removed from the basket by clicking delete button", f
       thumbnailPictures: ["images/image-product-1-thumbnail.jpg"],
     })
   );
-  console.log(store.getState());
   const { rerender } = render(
     <Provider store={store}>
       {store.getState().basket.map((product) => (

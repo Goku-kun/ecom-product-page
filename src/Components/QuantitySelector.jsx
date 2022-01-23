@@ -5,7 +5,7 @@ import { selectBasket } from "../features/basket/basketSlice";
 import SecondaryButton from "./SecondaryButton";
 import "./../sass/components/QuantitySelector.scss";
 
-export default function QuantitySelector({
+function QuantitySelector({
   internalQuantityForQuantitySelector,
   setInternalQuantityForQuantitySelector,
 }) {
@@ -16,7 +16,9 @@ export default function QuantitySelector({
     (product) => product.id === currentProductId
   );
   const currentProduct = useSelector(function (state) {
-    return state.products.find((product) => product.id === currentProductId);
+    return state.products.allProducts.find(
+      (product) => product.productId === currentProductId
+    );
   });
 
   // define event handlers
@@ -70,3 +72,5 @@ QuantitySelector.propTypes = {
   internalQuantityForQuantitySelector: PropTypes.number,
   setInternalQuantityForQuantitySelector: PropTypes.func,
 };
+
+export default QuantitySelector;

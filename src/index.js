@@ -8,7 +8,7 @@ import store from "./store";
 ReactDOM.render(
   <React.StrictMode>
     <Provider store={store}>
-      <App productId={0} />
+      <App productId={"7rBqfIxeYN7zS6l0ovdX"} />
     </Provider>
   </React.StrictMode>,
   document.getElementById("root")

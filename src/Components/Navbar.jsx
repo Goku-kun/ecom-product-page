@@ -9,7 +9,7 @@ import {
   makeOverlayVisible,
   toggleCartVisibility,
   selectCartVisibilityState,
-} from "../features/pages/pageSlice";
+} from "../features/page/pageSlice";
 
 function Navbar() {
   const dispatch = useDispatch();
@@ -75,7 +75,5 @@ function Navbar() {
     </>
   );
 }
-
-Navbar.propTypes = {};
 
 export default Navbar;

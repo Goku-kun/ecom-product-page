@@ -1,19 +1,22 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
+import { useSelector } from "react-redux";
 import "../sass/components/Slider.scss";
+import { selectCurrentProduct } from "../features/page/pageSlice";
 import SliderThumbail from "./SliderThumbnail";
 import LightBox from "./LightBox";
 
-export default function Slider(props) {
+function Slider() {
   // The array of images will either come from props or redux
   // I tried a few approaches to managing the state and have more
   // questions than answers at this point
 
   const [currentImageIndex, setCurrentImageIndex] = useState(0);
   const [lightBoxState, setLightBoxState] = useState(false);
+  // eslint-disable-next-line no-unused-vars
+  const imagesArray = useSelector(selectCurrentProduct).displayPictures;
 
   const handlePreviousImage = () => {
-    let length = props.imagesArray.length;
+    let length = imagesArray.length;
     if (currentImageIndex > 0) {
       setCurrentImageIndex(currentImageIndex - 1);
     } else {
@@ -22,7 +25,7 @@ export default function Slider(props) {
   };
 
   const handleNextImage = () => {
-    let length = props.imagesArray.length;
+    let length = imagesArray.length;
     if (currentImageIndex < length - 1) {
       setCurrentImageIndex(currentImageIndex + 1);
     } else {
@@ -35,7 +38,7 @@ export default function Slider(props) {
   }
 
   const url = {
-    backgroundImage: `url(${props.imagesArray[currentImageIndex]})`,
+    backgroundImage: `url(${imagesArray[currentImageIndex]})`,
   };
 
   return (
@@ -54,12 +57,7 @@ export default function Slider(props) {
         }}
         data-testid="lightbox-visibility-test"
       >
-        <div
-          className={`white-circle ${
-            props.type === "lightbox" ? "lightbox-show-button" : ""
-          }`}
-          onClick={handlePreviousImage}
-        >
+        <div className={`white-circle`} onClick={handlePreviousImage}>
           <img
             id="left-arrow"
             className="arrow-icon"
@@ -75,14 +73,14 @@ export default function Slider(props) {
         </div>
       </div>
       <LightBox
-        images={props.imagesArray}
+        images={imagesArray}
         setLightBoxState={setLightBoxState}
         lightBoxState={lightBoxState}
       />
       <div className="slider-photos">
         <SliderThumbail
           onClickThumbnail={onClickThumbnail}
-          images={props.imagesArray}
+          images={imagesArray}
           currentThumbnailActive={currentImageIndex}
         />
       </div>
@@ -90,7 +88,4 @@ export default function Slider(props) {
   );
 }
 
-Slider.propTypes = {
-  imagesArray: PropTypes.array.isRequired,
-  type: PropTypes.string,
-};
+export default Slider;

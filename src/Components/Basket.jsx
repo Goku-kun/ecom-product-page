@@ -34,7 +34,7 @@ function Basket({ isVisible }) {
                 discount={product.discount}
                 thumbnail={product.thumbnailPictures[0]}
                 quantity={product.quantity}
-                id={product.id}
+                productId={product.productId}
                 key={new Date().getTime()}
               />
             );

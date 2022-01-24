@@ -17,3 +17,12 @@
     background-color: $grayish-blue;
   }
 }
+
+.secondary-button-disabled {
+  color: scale-color($color: $primary-orange, $lightness: -50%);
+  // background-color: $grayish-blue;
+
+  &:hover {
+    color: scale-color($color: $primary-orange, $lightness: -50%);
+  }
+}

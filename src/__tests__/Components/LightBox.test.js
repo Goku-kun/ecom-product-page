@@ -1,8 +1,11 @@
 import React from "react";
 import { screen, render } from "@testing-library/react";
+import { Provider } from "react-redux";
+import userEvent from "@testing-library/user-event";
+import store from "../../store";
 import LightBox from "../../Components/LightBox";
 import Slider from "../../Components/Slider";
-import userEvent from "@testing-library/user-event";
+import { setCurrentProduct } from "../../features/page/pageSlice";
 
 test("expect LightBox to be in the document", function () {
   render(
@@ -22,8 +25,14 @@ test("expect LightBox to not be visible", function () {
   expect(lightBox).toHaveClass("lightbox-invisible");
 });
 
-test("expect LightBox to be hidden when clicked on X button", function () {
-  render(<Slider imagesArray={[]} />);
+test("expect LightBox to be hidden when clicked on X button", async function () {
+  store.dispatch(setCurrentProduct({ displayPictures: [] }));
+
+  render(
+    <Provider store={store}>
+      <Slider />
+    </Provider>
+  );
 
   const clickToMakeLightBoxVisible = screen.getByTestId(
     "lightbox-visibility-test"

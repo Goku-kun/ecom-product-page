@@ -15,7 +15,10 @@ function SliderThumbnail({ images, onClickThumbnail, currentThumbnailActive }) {
     return () => {};
   }, [currentThumbnailActive]);
   return (
-    <div className="small-images-container">
+    <div
+      className="small-images-container"
+      data-testid="sliderthumbnail-component-test"
+    >
       {images.map((image, index) => {
         return (
           <img

@@ -20,7 +20,10 @@ function ProductInfoContainer() {
   ] = useState(0);
 
   return (
-    <div className="product-info-container">
+    <div
+      className="product-info-container"
+      data-testid="productinfocontainer-component-test"
+    >
       <ProductInfo />
       <Price />
       <div className="flex-container-quantity-checkout">

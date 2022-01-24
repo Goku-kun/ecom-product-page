@@ -42,7 +42,7 @@ function Slider() {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" data-testid="slider-component-test">
       <div
         className="slider"
         tabIndex={0}

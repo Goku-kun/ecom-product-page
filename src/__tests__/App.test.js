@@ -7,7 +7,7 @@ import store from "../store";
 test("renders the entire application", () => {
   render(
     <Provider store={store}>
-      <App productId={0} />
+      <App productId={"0"} />
     </Provider>
   );
   const appElement = screen.getByTestId(/app-component-test/i);

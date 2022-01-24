@@ -7,7 +7,7 @@ import "../sass/components/ProductPage.scss";
 
 function ProductPage() {
   return (
-    <div className="product-page">
+    <div className="product-page" data-testid="productpage-component-test">
       <Navbar />
       <div className="main">
         <Slider />

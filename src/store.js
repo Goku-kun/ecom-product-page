@@ -6,7 +6,7 @@ import pageReducer from "./features/page/pageSlice";
 
 export default configureStore({
   reducer: {
-    users: userReducer,
+    user: userReducer,
     products: productsReducer,
     basket: basketReducer,
     page: pageReducer,

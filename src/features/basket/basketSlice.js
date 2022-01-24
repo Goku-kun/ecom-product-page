@@ -6,7 +6,7 @@ const options = {
   reducers: {
     addProductToBasket(state, action) {
       let product = state.find(
-        (basketProduct) => basketProduct.id === action.payload.id
+        (basketProduct) => basketProduct.productId === action.payload.productId
       );
       if (product === undefined || action.payload.quantity === undefined) {
         state.push({ quantity: 1, ...action.payload });
@@ -18,7 +18,7 @@ const options = {
     },
     removeProductFromBasket(state, action) {
       return state.filter(
-        (basketProduct) => basketProduct.id !== action.payload.id
+        (basketProduct) => basketProduct.productId !== action.payload.productId
       );
     },
   },

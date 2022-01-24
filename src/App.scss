@@ -4,3 +4,11 @@
   color: $primary-orange;
   background-color: $primary-pale-orange;
 }
+
+.loader-styles {
+  width: 100vw;
+  height: 100vh;
+  display: flex;
+  justify-content: center;
+  align-items: center;
+}

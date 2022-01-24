@@ -6,22 +6,23 @@ const options = {
     isOverlayVisible: false,
     isCartVisible: false,
     currentProductId: 0,
+    currentProduct: {},
   },
   reducers: {
     makeOverlayVisible(state) {
       state.isOverlayVisible = true;
-      return state;
     },
     makeOverlayHidden(state) {
       state.isOverlayVisible = false;
-      return state;
     },
     toggleCartVisibility(state) {
       state.isCartVisible = !state.isCartVisible;
-      return state;
     },
     setCurrentProductId(state, action) {
       state.currentProductId = action.payload;
+    },
+    setCurrentProduct(state, action) {
+      state.currentProduct = action.payload;
     },
   },
 };
@@ -39,11 +40,16 @@ export function selectCurrentProductId(state) {
   return state.page.currentProductId;
 }
 
+export function selectCurrentProduct(state) {
+  return state.page.currentProduct;
+}
+
 export const {
   makeOverlayHidden,
   makeOverlayVisible,
   toggleCartVisibility,
   setCurrentProductId,
+  setCurrentProduct,
 } = pageSlice.actions;
 
 export default pageSlice.reducer;

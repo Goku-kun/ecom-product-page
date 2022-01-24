@@ -2,7 +2,7 @@ import React from "react";
 import PropTypes from "prop-types";
 import "../sass/components/CheckoutButton.scss";
 
-export default function CheckoutButton(props) {
+function CheckoutButton(props) {
   // can add a custom class in addition to main-button.
   // width will depend on context, so pass it as a prop.
   // handleCLick can be customized to whatever is needed.
@@ -29,3 +29,5 @@ CheckoutButton.propTypes = {
   width: PropTypes.string,
   type: PropTypes.string,
 };
+
+export default CheckoutButton;

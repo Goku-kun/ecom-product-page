@@ -1,18 +1,37 @@
-import React from "react";
-import { useDispatch } from "react-redux";
+import React, { useEffect } from "react";
+import { useDispatch, useSelector } from "react-redux";
 import PropTypes from "prop-types";
+import { MoonLoader } from "react-spinners";
 import "./App.scss";
 import ProductPage from "./Components/ProductPage";
-import { setCurrentProductId } from "./features/pages/pageSlice";
+import { setCurrentProductId } from "./features/page/pageSlice";
+import {
+  fetchProductById,
+  selectIsFetching,
+} from "./features/products/productsSlice";
 
 function App({ productId }) {
   // assuming that there is react router which associates each product page using a product id
   const dispatch = useDispatch();
-  dispatch(setCurrentProductId(productId));
+  const isFetching = useSelector(selectIsFetching);
+
+  useEffect(
+    function () {
+      dispatch(setCurrentProductId(productId));
+      dispatch(fetchProductById("7rBqfIxeYN7zS6l0ovdX"));
+    },
+    [productId, setCurrentProductId, fetchProductById, dispatch]
+  );
 
   return (
-    <div className="App">
-      <ProductPage />
+    <div className="App" data-testid="app-component-test">
+      {isFetching && (
+        <div className="loader-styles">
+          <MoonLoader size={80} color={"#ff7d1a"} />
+        </div>
+      )}
+
+      {!isFetching && <ProductPage />}
     </div>
   );
 }
@@ -20,5 +39,5 @@ function App({ productId }) {
 export default App;
 
 App.propTypes = {
-  productId: PropTypes.number.isRequired,
+  productId: PropTypes.string.isRequired,
 };

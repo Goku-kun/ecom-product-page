@@ -6,7 +6,9 @@ import Price from "../../Components/Price";
 import { setCurrentProduct } from "../../features/page/pageSlice";
 
 test("expect Price component to be in the document", function () {
-  store.dispatch(setCurrentProduct({ price: 250, discount: 50 }));
+  store.dispatch(
+    setCurrentProduct({ price: 250, discount: 50, productId: "0" })
+  );
   render(
     <Provider store={store}>
       <Price />

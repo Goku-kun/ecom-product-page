@@ -13,7 +13,7 @@ test("expect BasketProduct to render", function () {
       <BasketProduct
         name="Autumn Sneaker"
         discount={50}
-        id={0}
+        productId={"0"}
         quantity={1}
         thumbnail={Thumbnail}
         unitPriceInUsd={250}
@@ -31,7 +31,7 @@ test("expect product name to have the correct value", function () {
       <BasketProduct
         name="Autumn Sneaker"
         discount={50}
-        id={0}
+        productId={"0"}
         quantity={1}
         thumbnail={Thumbnail}
         unitPriceInUsd={250}
@@ -50,7 +50,7 @@ test("expect correct price to be calculated based on discount", function () {
       <BasketProduct
         name="Autumn Sneaker"
         discount={60}
-        id={0}
+        productId={"0"}
         quantity={5}
         thumbnail={Thumbnail}
         unitPriceInUsd={250}

@@ -30,7 +30,7 @@
     .remove-lightbox {
       position: absolute;
       top: 3%;
-      right: 30%;
+      right: 25%;
       background-color: transparent;
       border: 0px;
       font-size: 3.5rem;
@@ -43,9 +43,10 @@
     }
   }
   .modal-content {
-    position: relative;
-    width: 100%;
-    left: 20%;
+    position: fixed;
+    left: 50%;
+    transform: translate(-50%);
+    -webkit-transform: translate(-50%);
 
     .slider-lightbox {
       display: flex;
@@ -106,7 +107,6 @@
     }
   }
   .modal-content {
-    left: 32%;
 
     .slider-lightbox {
       width: 32rem;

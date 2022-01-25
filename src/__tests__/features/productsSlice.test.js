@@ -4,7 +4,7 @@ test("expect products slice state to be initialized correctly", function () {
   expect(reducer(undefined, {})).toEqual({
     isFetching: true,
     fetchingError: false,
-    allProducts: [],
+    allProducts: {},
   });
 });
 

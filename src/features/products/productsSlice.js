@@ -7,9 +7,7 @@ export const fetchProductById = createAsyncThunk(
   "products/fetchProductById",
   async function (productId, thunkAPI) {
     const currentState = thunkAPI.getState();
-    let product = currentState.products.allProducts.find(
-      (product) => product.productId === productId
-    );
+    let product = currentState.products.allProducts[productId];
 
     // if the current product has been already fetched once before, fsend the one stored into the local cache.
     if (product !== undefined) {
@@ -31,7 +29,7 @@ export const fetchProductById = createAsyncThunk(
 
 const options = {
   name: "products",
-  initialState: { isFetching: true, fetchingError: false, allProducts: [] },
+  initialState: { isFetching: true, fetchingError: false, allProducts: {} },
   reducers: {},
   extraReducers: function (builder) {
     builder.addCase(fetchProductById.pending, function (state) {
@@ -39,7 +37,7 @@ const options = {
     });
     builder.addCase(fetchProductById.fulfilled, function (state, action) {
       state.isFetching = false;
-      state.allProducts.push(action.payload);
+      state.allProducts[action.payload.productId] = action.payload;
     });
     builder.addCase(fetchProductById.rejected, function (state) {
       state.isFetching = false;

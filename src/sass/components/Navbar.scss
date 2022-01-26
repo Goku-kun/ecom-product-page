@@ -23,7 +23,7 @@ nav {
   // for disabling the background when the overlay is open
 
   .brand-logo {
-    margin: 1% 23vw 0% 0.5rem;
+    margin: 1% 5vw 0% 0.5rem;
     height: 20px;
   }
 
@@ -95,6 +95,30 @@ nav {
     .avatar {
       width: 30px;
       height: auto;
+    }
+  }
+}
+
+@media screen and (min-width: 375px) {
+  nav {
+    .brand-logo {
+      margin-right: 17vw;
+    }
+  }
+}
+
+@media screen and (min-width: 425px) {
+  nav {
+    .brand-logo {
+      margin-right: 26vw;
+    }
+  }  
+}
+
+@media screen and (min-width: 768px) {
+  nav {
+    .brand-logo {
+      margin-right: 57vw;
     }
   }
 }

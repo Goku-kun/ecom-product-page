@@ -9,8 +9,8 @@
   gap: 1rem;
 
   img {
-    width: $basket-product-thumbnail;
-    height: $basket-product-thumbnail;
+    width: 40px;
+    height: 40px;
     border-radius: 0.25rem;
   }
 
@@ -25,7 +25,7 @@
       display: inline;
       color: $grayish-blue;
       margin-left: 0.2rem;
-      font-size: 1.2rem;
+      font-size: 0.8rem;
       overflow: hidden;
       text-overflow: ellipsis;
       white-space: nowrap;
@@ -56,9 +56,32 @@
   }
 }
 
+@media screen and (min-width: 375px) {
+  .basket-product {
+    img {
+      width: $basket-product-thumbnail;
+      height: $basket-product-thumbnail;
+    }
+
+    .basket-product-information {
+      p {
+        font-size: 1.2rem;
+      }
+    }
+  }
+}
+
+@media screen and (min-width: 768px) {
+  .basket-product {
+    // width: 100%;
+    justify-content: space-evenly;
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .basket-product {
     margin-right: 0.1rem;
+    margin-left: 1.2rem;
 
     img {
       width: $basket-product-thumbnail-desktop;

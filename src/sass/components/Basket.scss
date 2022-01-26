@@ -1,14 +1,15 @@
 @import "../helpers/variables";
 
 .basket-content {
-  width: 25rem;
+  width: 90%;
   position: absolute;
 
   // z-index needs to be less than the overlay menu
   z-index: 5;
   top: 5rem;
-  transform: translateX(-71.5%) scaleY(0);
-  -webkit-transform: translateX(-71.5%) scaleY(0);
+  left: 50%;
+  transform: translateX(-50%) scaleY(0);
+  -webkit-transform: translateX(-50%) scaleY(0);
   transform-origin: top;
   -webkit-transform-origin: top;
   background-color: #fff;
@@ -25,8 +26,9 @@
 }
 
 .basket-content-visible {
-  transform: translateX(-71.5%) scaleY(1);
-  -webkit-transform: translateX(-71.5%) scaleY(1);
+  left: 50%;
+  transform: translateX(-50%) scaleY(1);
+  -webkit-transform: translateX(-50%) scaleY(1);
   padding-bottom: 2rem;
 }
 
@@ -46,6 +48,16 @@
   font-weight: 700;
 }
 
+@media screen and(min-width: 768px) {
+  .basket-content {
+    width: 70%;
+    left: 57%;
+    .basket-checkout-button {
+      margin-left: 1.6rem;
+    }
+  }
+}
+
 @media screen and (min-width: 1024px) {
   .basket-content {
     width: 22.5rem;
@@ -56,6 +68,9 @@
 
     transform: translateX(-50%) scaleY(0);
     -webkit-transform: translateX(-50%) scaleY(0);
+    .basket-checkout-button {
+      margin-left: 1.2rem;
+    }
   }
   .basket-content-visible {
     transform: translateX(-50%) scaleY(1);

@@ -48,6 +48,37 @@ npm test
 
 7. Submit a pull request.
 
+## Folder Structure
+
+```
+src
+|
+├───Components
+├───features
+│   ├───basket
+│   ├───page
+│   ├───products
+│   └───users
+├───sass
+│   ├───components
+│   └───helpers
+├───utils
+└───__tests__
+    ├───Components
+    └───features
+```
+
+`Components` folder contains the React components files and their corresponding styles are store inside `src/sass/components` by the same name.
+
+`features` folder contains the different slices of state, reducers, action creators and state selector functions.
+
+`utils` contain the firebase implementation logic
+
+`__tests__/` contains all the written tests divided into two folders:
+
+1. `__tests__/Components` contains unit tests for the React components
+2. `__tests__/features` contains unit tests for the redux implementation
+
 ## Issues and feature requests
 
 You've found a bug in the source code, a mistake in the documentation or maybe you'd like a new feature? You can help us by [submitting an issue on GitHub](https://github.com/Goku-kun/ecom-product-page/issues). Before you create an issue, make sure to search the issue archive -- your issue may have already been addressed!

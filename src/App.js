@@ -18,7 +18,7 @@ function App({ productId }) {
   useEffect(
     function () {
       dispatch(setCurrentProductId(productId));
-      dispatch(fetchProductById("7rBqfIxeYN7zS6l0ovdX"));
+      dispatch(fetchProductById(productId));
     },
     [productId, setCurrentProductId, fetchProductById, dispatch]
   );

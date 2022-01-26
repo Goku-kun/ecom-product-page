@@ -33,7 +33,9 @@ function BasketProduct(props) {
         </div>
         <button
           className="remove-product"
-          onClick={() => dispatch(removeProductFromBasket({ id: props.id }))}
+          onClick={() =>
+            dispatch(removeProductFromBasket({ productId: props.productId }))
+          }
           data-testid="basketproductdelete-test"
         >
           <img src="images/icon-delete.svg" alt="remove product" />
@@ -48,7 +50,7 @@ BasketProduct.propTypes = {
   unitPriceInUsd: PropTypes.number.isRequired,
   thumbnail: PropTypes.string.isRequired,
   quantity: PropTypes.number.isRequired,
-  id: PropTypes.number.isRequired,
+  productId: PropTypes.string.isRequired,
   discount: PropTypes.number.isRequired,
 };
 

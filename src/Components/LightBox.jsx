@@ -34,7 +34,10 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
 
   return (
     <div
-      className={`lightbox ${lightBoxState === true ? "lightbox-visible" : ""}`}
+      className={`lightbox ${
+        lightBoxState === true ? "lightbox-visible" : "lightbox-invisible"
+      }`}
+      data-testid="lightbox-component-test"
     >
       <div
         className="modal"
@@ -43,6 +46,7 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
         }}
       >
         <button
+          data-testid="lightbox-hide-test"
           className="remove-lightbox"
           onClick={() => {
             setLightBoxState(false);
@@ -55,7 +59,12 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
           &times;
         </button>
         <div className="modal-content">
-          <div id="slider-lightbox" className="slider-lightbox" style={url}>
+          <div
+            id="slider-lightbox"
+            className="slider-lightbox"
+            style={url}
+            data-testid="lightbox-mainimage-test"
+          >
             <div
               className={`white-circle-lightbox`}
               onClick={handlePreviousImage}
@@ -85,6 +94,7 @@ function LightBox({ images, setLightBoxState, lightBoxState }) {
               onKeyUp={(event) => {
                 if (event.key === "Enter") handleNextImage();
               }}
+              data-testid="lightbox-rarrow-test"
             >
               <svg
                 xmlns="http://www.w3.org/2000/svg"

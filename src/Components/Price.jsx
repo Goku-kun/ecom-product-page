@@ -9,9 +9,9 @@ function Price() {
   const { price, discount } = useSelector(selectCurrentProduct);
 
   return (
-    <div className="price-container">
+    <div className="price-container" data-testid="price-component-test">
       <div className="current-percent-container">
-        <p className="current-price">
+        <p className="current-price" data-testid="price-discounted-test">
           $
           {
             // Subtract the percentage off to get the sale price

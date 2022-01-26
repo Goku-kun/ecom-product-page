@@ -1,5 +1,4 @@
 import React, { useState } from "react";
-import PropTypes from "prop-types";
 import { useSelector } from "react-redux";
 import "../sass/components/Slider.scss";
 import { selectCurrentProduct } from "../features/page/pageSlice";
@@ -43,7 +42,7 @@ function Slider() {
   };
 
   return (
-    <div className="slider-container">
+    <div className="slider-container" data-testid="slider-component-test">
       <div
         className="slider"
         tabIndex={0}
@@ -56,6 +55,7 @@ function Slider() {
             setLightBoxState(true);
           } else if (event.key === "Escape") setLightBoxState(false);
         }}
+        data-testid="lightbox-visibility-test"
       >
         <div className={`white-circle`} onClick={handlePreviousImage}>
           <img
@@ -87,9 +87,5 @@ function Slider() {
     </div>
   );
 }
-
-Slider.propTypes = {
-  type: PropTypes.string,
-};
 
 export default Slider;

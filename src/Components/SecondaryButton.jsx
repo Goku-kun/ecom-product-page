@@ -4,7 +4,13 @@ import "./../sass/components/SecondaryButton.scss";
 
 function SecondaryButton({ disabled, children, onClick }) {
   return (
-    <button onClick={onClick} className="secondary-button" disabled={disabled}>
+    <button
+      onClick={onClick}
+      className={`secondary-button ${
+        disabled ? "secondary-button-disabled" : ""
+      }`}
+      disabled={disabled}
+    >
       {children}
     </button>
   );

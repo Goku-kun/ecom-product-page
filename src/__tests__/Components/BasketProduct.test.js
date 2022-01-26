@@ -13,7 +13,7 @@ test("expect BasketProduct to render", function () {
       <BasketProduct
         name="Autumn Sneaker"
         discount={50}
-        id={0}
+        productId={"0"}
         quantity={1}
         thumbnail={Thumbnail}
         unitPriceInUsd={250}
@@ -31,7 +31,7 @@ test("expect product name to have the correct value", function () {
       <BasketProduct
         name="Autumn Sneaker"
         discount={50}
-        id={0}
+        productId={"0"}
         quantity={1}
         thumbnail={Thumbnail}
         unitPriceInUsd={250}
@@ -50,7 +50,7 @@ test("expect correct price to be calculated based on discount", function () {
       <BasketProduct
         name="Autumn Sneaker"
         discount={60}
-        id={0}
+        productId={"0"}
         quantity={5}
         thumbnail={Thumbnail}
         unitPriceInUsd={250}
@@ -65,7 +65,7 @@ test("expect correct price to be calculated based on discount", function () {
 test("expect product to be removed from the basket by clicking delete button", function () {
   store.dispatch(
     addProductToBasket({
-      id: 0,
+      productId: "0",
       companyName: "SNEAKER COMPANY",
       name: "Fall Limited Edition Sneakers",
       price: 250,
@@ -74,14 +74,13 @@ test("expect product to be removed from the basket by clicking delete button", f
       thumbnailPictures: ["images/image-product-1-thumbnail.jpg"],
     })
   );
-  console.log(store.getState());
   const { rerender } = render(
     <Provider store={store}>
       {store.getState().basket.map((product) => (
         <BasketProduct
           name={product.name}
           discount={product.discount}
-          id={product.id}
+          productId={product.productId}
           quantity={product.quantity}
           thumbnail={product.thumbnailPictures[0]}
           unitPriceInUsd={product.price}
@@ -102,7 +101,7 @@ test("expect product to be removed from the basket by clicking delete button", f
         <BasketProduct
           name={product.name}
           discount={product.discount}
-          id={product.id}
+          productId={product.productId}
           quantity={product.quantity}
           thumbnail={product.thumbnailPictures[0]}
           unitPriceInUsd={product.price}

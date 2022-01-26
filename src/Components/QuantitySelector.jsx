@@ -4,6 +4,7 @@ import PropTypes from "prop-types";
 import { selectBasket } from "../features/basket/basketSlice";
 import SecondaryButton from "./SecondaryButton";
 import "./../sass/components/QuantitySelector.scss";
+import { selectCurrentProduct } from "../features/page/pageSlice";
 
 function QuantitySelector({
   internalQuantityForQuantitySelector,
@@ -13,13 +14,9 @@ function QuantitySelector({
 
   const basketProducts = useSelector(selectBasket);
   const currentProductInBasket = basketProducts.find(
-    (product) => product.id === currentProductId
+    (product) => product.productId === currentProductId
   );
-  const currentProduct = useSelector(function (state) {
-    return state.products.allProducts.find(
-      (product) => product.productId === currentProductId
-    );
-  });
+  const currentProduct = useSelector(selectCurrentProduct);
 
   // define event handlers
   const reduce = () =>

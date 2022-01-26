@@ -7,8 +7,7 @@ import "../sass/components/ProductInfoContainer.scss";
 import ProductInfo from "./ProductInfo";
 import Price from "./Price";
 import QuantitySelector from "./QuantitySelector";
-import CheckoutButton from "./CheckoutButton";
-// state selector and action creator imports
+import PrimaryButton from "./PrimaryButton";
 import { addProductToBasket } from "../features/basket/basketSlice";
 import { selectCurrentProduct } from "../features/page/pageSlice";
 
@@ -21,7 +20,10 @@ function ProductInfoContainer() {
   ] = useState(0);
 
   return (
-    <div className="product-info-container">
+    <div
+      className="product-info-container"
+      data-testid="productinfocontainer-component-test"
+    >
       <ProductInfo />
       <Price />
       <div className="flex-container-quantity-checkout">
@@ -33,7 +35,7 @@ function ProductInfoContainer() {
             setInternalQuantityForQuantitySelector
           }
         />
-        <CheckoutButton
+        <PrimaryButton
           type="add-to-cart-button"
           handleClick={() => {
             if (internalQuantityForQuantitySelector === 0) return;
@@ -53,7 +55,7 @@ function ProductInfoContainer() {
             alt="cart icon"
           />
           <p id="add-to-cart">Add to cart</p>
-        </CheckoutButton>
+        </PrimaryButton>
       </div>
     </div>
   );

@@ -3,7 +3,6 @@ import { screen, render, getNodeText } from "@testing-library/react";
 import BasketProduct from "../../Components/BasketProduct";
 import store from "../../store";
 import { Provider } from "react-redux";
-import Thumbnail from "./../../../public/images/image-product-1-thumbnail.jpg";
 import { addProductToBasket } from "./../../features/basket/basketSlice";
 import UserEvent from "@testing-library/user-event";
 
@@ -15,7 +14,7 @@ test("expect BasketProduct to render", function () {
         discount={50}
         productId={"0"}
         quantity={1}
-        thumbnail={Thumbnail}
+        thumbnail={""}
         unitPriceInUsd={250}
       />
     </Provider>
@@ -33,7 +32,7 @@ test("expect product name to have the correct value", function () {
         discount={50}
         productId={"0"}
         quantity={1}
-        thumbnail={Thumbnail}
+        thumbnail={""}
         unitPriceInUsd={250}
       />
     </Provider>
@@ -52,7 +51,7 @@ test("expect correct price to be calculated based on discount", function () {
         discount={60}
         productId={"0"}
         quantity={5}
-        thumbnail={Thumbnail}
+        thumbnail={""}
         unitPriceInUsd={250}
       />
     </Provider>

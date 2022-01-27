@@ -80,12 +80,47 @@ nav {
     display: flex;
     gap: 30%;
 
+    .cart-counter {
+      position: relative;
+      left: 0.7rem;
+      width: 17px;
+      background-color: $primary-orange;
+      border-radius: 10px;
+      font-size: 0.6rem;
+      color: $white;
+      visibility: hidden;
+    }
+
+    .cart-counter-visible {
+      visibility: visible;
+      animation: pulse 1s;
+    }
+
+    @keyframes pulse {
+      0% {
+        transform: scale(1);
+      }
+      20% {
+        transform: scale(1.4);
+      }
+      50% {
+        transform: scale(0.9);
+      }
+      80% {
+        transform: scale(1.2);
+      }
+      100% {
+        transform: scale(1);
+      }
+    }
+
     .cart-button {
       background-color: transparent;
       border: 0px;
       cursor: pointer;
 
       .cart-logo {
+        margin-top: -0.5rem;
         width: 30px;
         height: auto;
         color: $black;
@@ -112,7 +147,7 @@ nav {
     .brand-logo {
       margin-right: 26vw;
     }
-  }  
+  }
 }
 
 @media screen and (min-width: 768px) {

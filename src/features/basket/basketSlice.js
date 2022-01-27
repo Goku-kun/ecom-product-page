@@ -28,6 +28,19 @@ export function selectBasket(state) {
   return state.basket;
 }
 
+export function selectTotalProductCountInTheBasket(state) {
+  let basketProducts = state.basket;
+  let totalCount = 0;
+  if (basketProducts.length === 0) {
+    return totalCount;
+  } else {
+    basketProducts.forEach((product) => {
+      totalCount += product.quantity;
+    });
+    return totalCount;
+  }
+}
+
 const basketSlice = createSlice(options);
 
 export const { addProductToBasket, removeProductFromBasket } =

@@ -10,12 +10,16 @@ import {
   toggleCartVisibility,
   selectCartVisibilityState,
 } from "../features/page/pageSlice";
+import { selectTotalProductCountInTheBasket } from "../features/basket/basketSlice";
 
 function Navbar() {
   const dispatch = useDispatch();
   const defaultUser = useSelector(selectDefaultUser);
   const isOverlayVisible = useSelector(selectOverlayState);
   const isCartVisible = useSelector(selectCartVisibilityState);
+  const totalProductsInBasketCount = useSelector(
+    selectTotalProductCountInTheBasket
+  );
 
   return (
     <>
@@ -58,6 +62,13 @@ function Navbar() {
             onClick={() => dispatch(toggleCartVisibility())}
             className="cart-button"
           >
+            <div
+              className={`cart-counter ${
+                totalProductsInBasketCount !== 0 ? "cart-counter-visible" : ""
+              }`}
+            >
+              {totalProductsInBasketCount}
+            </div>
             <img
               alt="cart logo"
               className="cart-logo"
